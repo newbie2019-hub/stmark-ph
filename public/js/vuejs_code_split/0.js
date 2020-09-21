@@ -58,12 +58,72 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
     return {
       isLoading: false,
+      isSignUp: false,
       data: {
+        fullName: "",
         email: "",
         password: ""
       }
@@ -126,6 +186,74 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    SignUp: function SignUp() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var res, i;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!(_this2.data.fullName.trim() == "")) {
+                  _context2.next = 2;
+                  break;
+                }
+
+                return _context2.abrupt("return", _this2.err("Full name is required"));
+
+              case 2:
+                if (!(_this2.data.email.trim() == "")) {
+                  _context2.next = 4;
+                  break;
+                }
+
+                return _context2.abrupt("return", _this2.err("Email is required"));
+
+              case 4:
+                if (!(_this2.data.password.trim() == "")) {
+                  _context2.next = 6;
+                  break;
+                }
+
+                return _context2.abrupt("return", _this2.err("Password is required"));
+
+              case 6:
+                _this2.isAdding = true;
+                _context2.next = 9;
+                return _this2.callApi("post", "/create_user", _this2.data);
+
+              case 9:
+                res = _context2.sent;
+
+                if (res.status == 200 || res.status == 201) {
+                  _this2.success("User has been added successfully!");
+
+                  _this2.addingUser = false;
+                  _this2.isAdding = false;
+                  _this2.data.fullName = "";
+                  _this2.data.email = "";
+                  _this2.data.password = "";
+                } else {
+                  if (res.status == 422) {
+                    for (i in res.data.errors) {
+                      _this2.err(res.data.errors[i][0]);
+
+                      _this2.isAdding = false;
+                    }
+                  } else {
+                    _this2.swr();
+                  }
+                }
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   }
 });
@@ -148,7 +276,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "hero" }, [
-    _c("div", { staticClass: "container h-100" }, [
+    _c("div", { staticClass: "container-fluid h-100" }, [
       _c(
         "div",
         {
@@ -156,87 +284,251 @@ var render = function() {
             "row d-flex h-100 justify-content-center align-items-center"
         },
         [
-          _c("div", { staticClass: "col-sm-7 col-md-7 col-lg-7" }, [
-            _c(
-              "h3",
-              { staticClass: "mx-auto text-center pt-3 text-light pb-2" },
-              [_vm._v("Please Log-in")]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "row justify-content-center" }, [
-              _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-8" }, [
-                _c("form", [
-                  _c("div", { staticClass: "form-group text-light" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.data.email,
-                          expression: "data.email"
-                        }
-                      ],
-                      staticClass: "form-control rounded-pill",
-                      attrs: {
-                        type: "email",
-                        id: "user_email",
-                        placeholder: "Enter your Email",
-                        "aria-describedby": "Email Address"
-                      },
-                      domProps: { value: _vm.data.email },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+          _c("div", { staticClass: "col-sm-4 col-md-4 col-lg-4" }, [
+            _c("img", {
+              staticClass: "img-fluid",
+              attrs: { src: "/images/login.svg", loading: "lazy" }
+            })
+          ]),
+          _vm._v(" "),
+          !_vm.isSignUp
+            ? _c("div", { staticClass: "col-sm-6 col-md-6 col-lg-6" }, [
+                _c(
+                  "h3",
+                  { staticClass: "mx-auto text-center pt-3 text-light pb-5" },
+                  [_vm._v("Please Log-in")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row justify-content-center" }, [
+                  _c("div", { staticClass: "col-sm-5 col-md-5 col-lg-5" }, [
+                    _c("form", [
+                      _c("div", { staticClass: "form-group text-light" }, [
+                        _vm._v(
+                          "\n                Email Address\n                "
+                        ),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.email,
+                              expression: "data.email"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "email",
+                            id: "user_email",
+                            placeholder: "sampleemail@gmail.com",
+                            "aria-describedby": "Email Address"
+                          },
+                          domProps: { value: _vm.data.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.data, "email", $event.target.value)
+                            }
                           }
-                          _vm.$set(_vm.data, "email", $event.target.value)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group text-light" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.data.password,
-                          expression: "data.password"
-                        }
-                      ],
-                      staticClass: "form-control rounded-pill",
-                      attrs: {
-                        type: "password",
-                        id: "user_password",
-                        placeholder: "******"
-                      },
-                      domProps: { value: _vm.data.password },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group text-light" }, [
+                        _vm._v("\n                Password\n                "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.password,
+                              expression: "data.password"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "password",
+                            id: "user_password",
+                            placeholder: "******"
+                          },
+                          domProps: { value: _vm.data.password },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.data,
+                                "password",
+                                $event.target.value
+                              )
+                            }
                           }
-                          _vm.$set(_vm.data, "password", $event.target.value)
-                        }
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-light" }, [
+                        _vm._v(
+                          "\n                Dont have an account?\n                "
+                        ),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "text-center mx-auto text-warning",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.isSignUp = !_vm.isSignUp
+                              }
+                            }
+                          },
+                          [_vm._v("Sign-Up")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row justify-content-center" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-info mt-4",
+                            attrs: { type: "button" },
+                            on: { click: _vm.login }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(_vm.isLoading ? "Logging in..." : "Log-in")
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.isSignUp
+            ? _c("div", { staticClass: "col-sm-6 col-md-6 col-lg-6" }, [
+                _c(
+                  "h3",
+                  { staticClass: "mx-auto text-center pt-3 text-light pb-5" },
+                  [_vm._v("Sign-Up")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "row justify-content-center" }, [
                   _c(
-                    "a",
-                    {
-                      staticClass:
-                        "form-control rounded-pill btn btn-primary mb-3",
-                      attrs: { type: "button" },
-                      on: { click: _vm.login }
-                    },
-                    [_vm._v(_vm._s(_vm.isLoading ? "Logging in..." : "Log-in"))]
+                    "div",
+                    { staticClass: "col-sm-5 col-md-5 col-lg-5 text-light" },
+                    [
+                      _vm._v("\n            Full Name\n            "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.data.fullName,
+                            expression: "data.fullName"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm mb-2",
+                        attrs: { type: "text", placeholder: "" },
+                        domProps: { value: _vm.data.fullName },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "fullName", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v("\n            Email Address\n            "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.data.email,
+                            expression: "data.email"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm mb-2",
+                        attrs: { type: "text", placeholder: "" },
+                        domProps: { value: _vm.data.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "email", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v("\n            Password\n            "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.data.password,
+                            expression: "data.password"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm mb-2",
+                        attrs: { type: "password", placeholder: "" },
+                        domProps: { value: _vm.data.password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.data, "password", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-light" }, [
+                        _vm._v(
+                          "\n              Already have an account?\n              "
+                        ),
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "text-center mx-auto text-warning mt-3",
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                _vm.isSignUp = !_vm.isSignUp
+                              }
+                            }
+                          },
+                          [_vm._v("Sign-In")]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row justify-content-center" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-info mt-4",
+                            attrs: { type: "button" },
+                            on: { click: _vm.SignUp }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm.isLoading ? "Signing Up..." : "Sign-Up"
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    ]
                   )
                 ])
               ])
-            ])
-          ])
+            : _vm._e()
         ]
       )
     ])

@@ -103,7 +103,7 @@ class AdminController extends Controller
         $picName = time().'.'.$request->image->extension();
         $request->image->move(public_path('uploads'), $picName);
         return response()->json([
-            'url' => "http://127.0.0.1:8000/uploads/$picName"
+            'url' => "https://stmark-ph.herokuapp.com/uploads/$picName"
         ]);
     }
 
@@ -144,7 +144,6 @@ class AdminController extends Controller
                 'fullName' => 'required',
                 'email' => 'bail|required|email|unique:users',
                 'password' => 'bail|required|min:6',
-                'role' => 'required',
             ]);
             $password = bcrypt($request->password);
             return User::create([
