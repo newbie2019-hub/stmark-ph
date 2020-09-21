@@ -1,0 +1,148 @@
+//HOME PAGE
+.hero {
+    width: 100%;
+    height: 100vh;
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, rgba(32, 24, 1, 0.541) 0%, rgba(26, 20, 0, 0.829), #0000009c 92% ), url("../images/hero-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+//SCHEDULE PAGE
+.schedules {
+    width: 100%;
+    height: 100vh;
+    padding: 10rem 0;
+    background: linear-gradient(to bottom, rgba(32, 24, 1, 0.541) 0%, rgba(26, 20, 0, 0.829), #0000009c 92% ), url("../images/hero-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+//NOT FOUND
+.notfound {
+    width: 100%;
+    height: 100vh;
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+//LOCATION SECTION
+.location {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 35rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 92%, #000000 100%), url("../images/location-section.jpg");
+    background-position: center;
+    // clip-path: polygon(0 5%, 100% 0%, 100% 94%, 0% 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+
+//FOOTER
+.footer-container {
+    width: 100%;
+    right: 0;
+	bottom: 0;
+    margin-top: 2rem;
+    padding: 2rem 5rem !important;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, rgba(36, 34, 30, 0.404) 0%, rgba(34, 32, 26, 0.719) 42%), url("../images/footer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.footer-brand {
+    width: 100%;
+    background: rgb(24, 24, 24);
+    margin: 0;
+	right: 0;
+	bottom: 0;
+
+    &__content {
+        text-transform: uppercase;
+        color: $color-white;
+        text-align: center;
+        padding: .7rem 2px;
+        font-size: .8rem;
+    }
+}
+
+.schedules {
+    padding: 0 2rem;
+}
+
+//RESOURCE PAGE
+.resources {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(to bottom, rgba(32, 24, 1, 0.541) 0%, rgba(26, 20, 0, 0.829), #0000009c 92% ), url("../images/hero-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.resourcecontent{
+    width: 100%;
+    position: relative;
+    height: 500px;
+    background: $color-white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+//UPDATE SEC
+.updatesection {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(to bottom, rgba(32, 24, 1, 0.541) 0%, rgba(26, 20, 0, 0.829), #0000009c 92% ), url("../images/hero-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.update-section {
+    width: 100%;
+}
+
+//REMOVE OVERFLOW
+#aboutus {
+    overflow-x: hidden;
+}
+#services {
+    overflow-x: hidden;
+}
+#donation {
+    overflow-x: hidden;
+}
+#gallery {
+    overflow-y:hidden;
+}

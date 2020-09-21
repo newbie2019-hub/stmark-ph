@@ -1,0 +1,56 @@
+.post-container {
+    box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.137);
+    max-width: 750px;
+    margin-top: -10rem;
+    background: white;
+
+    &__hero {
+        position: relative;
+    }
+}
+
+.container_header {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.2rem;
+}
+
+
+.updates-container {
+    margin-top: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    max-width: 500px;
+    box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.171);
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s, -webkit-transform .5s;
+    backface-visibility: hidden;
+    cursor: pointer;
+
+    &--content {
+        margin-top: 10px;
+        padding: .5rem 1rem;
+    }
+
+    &:not(:last-child){
+        margin-right: 8px;
+    }
+
+    &:hover{
+        box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.267);
+        transform: translateY(-3px);
+    }
+    // &--img1 {
+    //     height: 24rem;
+    //     background-size: cover;
+    //     background-position: center;
+    //     background-image: url(../images/abounamina.jpg);
+    //     object-fit: cover;
+    // }
+}
+
+.update-container {
+    min-height: 300px;
+}
