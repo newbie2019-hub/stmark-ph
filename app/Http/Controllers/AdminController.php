@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Announcement;
 use App\User;
 use App\tags;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
@@ -144,6 +145,7 @@ class AdminController extends Controller
                 'fullName' => 'required',
                 'email' => 'bail|required|email|unique:users',
                 'password' => 'bail|required|min:6',
+                'role' => 'requried',
             ]);
             $password = bcrypt($request->password);
             return User::create([
@@ -152,6 +154,26 @@ class AdminController extends Controller
                 'password' => $password,
                 'role' => $request->role,
             ]);
+    }
+    public function signup(Request $request){
+            // validate request
+            $this->validate($request, [
+                'fullName' => 'required',
+                'email' => 'bail|required|email|unique:users',
+                'password' => 'bail|required|min:6',
+            ]);
+            $password = bcrypt($request->password);
+            User::create([
+                'name' => $request->fullName,
+                'email' => $request->email,
+                'password' => $password,
+                'role' => $request->role,
+            ]);
+
+            //LOG-IN USER
+            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            Auth::user();
+         
     }
 
     public function getUsers(Request $request){

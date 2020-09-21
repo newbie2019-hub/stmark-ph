@@ -227,7 +227,7 @@ export default {
       if (this.currentLimitCount < 3) {
         if (c_date === sched) {
           this.currentLimitCount++;
-          console.log(c_date + ' ' + sched)
+      
           return true;
         } else {
           return false;

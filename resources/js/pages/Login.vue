@@ -1,16 +1,16 @@
 <template>
-  <div class="hero">
+  <div class="" style="height: 100vh">
     <div class="container-fluid h-100">
       <div class="row d-flex h-100 justify-content-center align-items-center">
         <div class="col-sm-4 col-md-4 col-lg-4">
-          <img class="img-fluid" v-bind:src="'/images/login.svg'" loading="lazy" />
+          <img class="img-fluid" v-bind:src="'/images/login.png'" loading="lazy" />
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6" v-if="!isSignUp">
-          <h3 class="mx-auto text-center pt-3 text-light pb-5">Please Log-in</h3>
+          <h3 class="mx-auto text-center pt-3 pb-5">Please Log-in</h3>
           <div class="row justify-content-center">
-            <div class="col-sm-5 col-md-5 col-lg-5">
+            <div class="col-sm-7 col-md-7 col-lg-5">
               <form>
-                <div class="form-group text-light">
+                <div class="form-group">
                   Email Address
                   <input
                     type="email"
@@ -21,7 +21,7 @@
                     aria-describedby="Email Address"
                   />
                 </div>
-                <div class="form-group text-light">
+                <div class="form-group">
                   Password
                   <input
                     type="password"
@@ -31,7 +31,7 @@
                     placeholder="******"
                   />
                 </div>
-                <p class="text-light">
+                <p class="">
                   Dont have an account?
                   <a
                     class="text-center mx-auto text-warning"
@@ -51,9 +51,9 @@
           </div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6" v-if="isSignUp">
-          <h3 class="mx-auto text-center pt-3 text-light pb-5">Sign-Up</h3>
+          <h3 class="mx-auto text-center pt-3 pb-5">Sign-Up</h3>
           <div class="row justify-content-center">
-            <div class="col-sm-5 col-md-5 col-lg-5 text-light">
+            <div class="col-sm-7 col-md-7 col-lg-5">
               Full Name
               <input
                 type="text"
@@ -75,7 +75,7 @@
                 placeholder
                 v-model="data.password"
               />
-              <p class="text-light">
+              <p class="">
                 Already have an account?
                 <a
                   class="text-center mx-auto text-warning mt-3"
@@ -138,7 +138,7 @@ export default {
         return this.err("Password is required");
 
       this.isAdding = true;
-      const res = await this.callApi("post", "/create_user", this.data);
+      const res = await this.callApi("post", "/sign-up", this.data);
       if (res.status == 200 || res.status == 201) {
         this.success("User has been added successfully!");
         this.addingUser = false;
@@ -146,6 +146,7 @@ export default {
         this.data.fullName = "";
         this.data.email = "";
         this.data.password = "";
+        window.location = "/manage";
       } else {
         if (res.status == 422) {
           for (let i in res.data.errors) {

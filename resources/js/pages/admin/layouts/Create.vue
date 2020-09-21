@@ -171,8 +171,7 @@ export default {
     },
     async SavePost() {
       this.data.featuredImage = this.data.featuredImage.file.name
-      
-      console.log(this.data);
+
       if (this.data.title.trim() == "") return this.err("Title is required");
       if (this.data.description.trim() == "")
         return this.err("Description is required");
@@ -187,7 +186,7 @@ export default {
         {'x-csrf-token' : this.token, 'X-Requested-With' : 'XMLHttpRequest'},
         this.fileRecordsForUpload
       );
-      
+
       this.isCreating = true;
 
       this.data.featuredImage = resu[0].data

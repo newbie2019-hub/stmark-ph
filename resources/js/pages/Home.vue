@@ -281,7 +281,7 @@ export default{
   methods: {
     async covid(){
       const res = await this.callApi('GET','https://api.covid19api.com/stats');
-      console.log(res)
+     
     }
   },
   created() {

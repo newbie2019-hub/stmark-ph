@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/deleteFImage', 'AdminController@deleteFImage');
 //USER ROUTES
 Route::post('/create_user', 'AdminController@createUser');
+Route::post('/sign-up', 'AdminController@signup');
 
 Route::middleware('auth')->group(function () 
 {
