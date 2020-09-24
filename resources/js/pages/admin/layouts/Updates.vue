@@ -99,9 +99,7 @@ export default {
   components: {
     deleteModal,
   },
-
   mounted: function () {},
-
   methods: {
     handleAction(actionName, data) {
       switch (actionName) {
