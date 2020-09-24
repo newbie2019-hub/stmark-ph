@@ -106,7 +106,7 @@ export default {
     handleAction(actionName, data) {
       switch (actionName) {
         case "view":
-          window.open(`http://127.0.0.1:8000/blog/${data.slug}`)
+          window.open(`https://stmark-ph.herokuapp.com/blog/${data.slug}`)
           break;
         case "edit":
           this.editPost(data);
