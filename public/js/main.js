@@ -1,3 +1,4 @@
+
 //Navbar
 (function ($) {
     
@@ -13,3 +14,5 @@
     $(window).scroll(navbarCollapse);
     $("img").addClass('img-fluid')
 })(jQuery);
+
+

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <navbar></navbar>
+
     <section id="resources" class="updatesection">
       <div class="container d-flex h-100 justify-content-center align-items-center">
         <div class="mx-auto text-center">
@@ -62,7 +62,7 @@
             <div class="col-md-8 col-lg-4">
               <div class="row justify-content-center">
                 <h3 class="text-uppercase mb-3" data-aos="fade-up" data-aos-duration="1400">
-                  <span class="header-secondary text-secondary font-weight-bold">POPULAR POST</span>
+                  <span class="header-secondary text-center text-secondary font-weight-bold">POPULAR POST</span>
                 </h3>
                 <div v-for="(content, i) in popularPost" :key="i">
                   <a v-bind:href="'/blog/'+ content.slug">
@@ -89,7 +89,7 @@
           <div class="container" v-if="!hasContent">
             <div class="row justify-content-center align-items-center pb-3">
               <div class="col-md-6 col-lg-6">
-                <img v-bind:src="'/images/empty_post.svg'" />
+                <img v-bind:src="'/images/empty_post.svg'" style="width:60%"/>
               </div>
               <div class="col-md-4 col-lg-4">
                 <div class="text-center text-lg-left mt-5">
@@ -107,18 +107,12 @@
       </div>
     </section>
     <gotop></gotop>
-    <location></location>
-    <donate></donate>
-    <footerlayout></footerlayout>
+  
   </div>
 </template>
 <script>
-import navbar from "../components/Navbar";
-import gotop from "../components/Gotop";
 
-import location from "../pages/layouts/Location";
-import donate from "../pages/layouts/Donate";
-import footerlayout from "../pages/layouts/Footer";
+import gotop from "../components/Gotop";
 
 export default {
   data() {
@@ -164,11 +158,9 @@ export default {
     this.getPopularPost();
   },
   components: {
-    navbar,
+
     gotop,
-    location,
-    donate,
-    footerlayout,
+
   },
 };
 </script>

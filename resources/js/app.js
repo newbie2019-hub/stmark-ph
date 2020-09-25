@@ -39,9 +39,6 @@ import 'vue-file-agent/dist/vue-file-agent.css';
 Vue.use(VueFileAgent);
 
 //LOAD VUE COMPONENTS
-Vue.component('home', require('./pages/Home.vue').default)
-Vue.component('schedules', require('./pages/Schedules.vue').default)
-Vue.component('resources', require('./pages/Resources.vue').default)
 Vue.component('updates', require('./pages/Updates.vue').default)
 Vue.component('blog', require('./pages/Blog.vue').default)
 Vue.component('log-in', () => import('./pages/Login.vue'))

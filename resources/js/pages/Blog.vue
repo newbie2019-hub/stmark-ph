@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navbar></navbar>
     <section id="resources" class="updatesection">
       <div class="container d-flex h-100 justify-content-center align-items-center">
         <div class="mx-auto text-center">
@@ -77,10 +76,7 @@
         </div>
       </div>
     </div>
-    <location></location>
-    <gotop></gotop>
-    <donate></donate>
-    <footerlayout></footerlayout>
+  
   </div>
 </template>
 <style>
@@ -89,12 +85,6 @@
 }
 </style>
 <script>
-import navbar from "../components/Navbar";
-import gotop from "../components/Gotop";
-
-import location from "../pages/layouts/Location";
-import donate from "../pages/layouts/Donate";
-import footerlayout from "../pages/layouts/Footer";
 
 export default {
   props: ["post", "recent"],
@@ -108,11 +98,6 @@ export default {
     this.tags = this.post.tags;
   },
   components: {
-    navbar,
-    gotop,
-    location,
-    donate,
-    footerlayout,
   },
 };
 </script>
