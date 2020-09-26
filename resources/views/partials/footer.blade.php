@@ -12,7 +12,7 @@
         <div class="d-flex flex-column">
           <h5 class="text-uppercase font-weight-bold text-light mb-2">QUICK LINKS</h5>
           <a href="/schedules#clergy" class="custom-link">SERVING CLERGY</a>
-          <a href="#" class="custom-link">ANNOUNCEMENTS</a>
+          <a href="#" class="custom-link">UPDATES</a>
           <a href="/resources" class="custom-link">RESOURCES</a>
           <a href="/schedules" class="custom-link">SCHEDULES</a>
           <a href="#location" class="custom-link">LOCATION</a>
