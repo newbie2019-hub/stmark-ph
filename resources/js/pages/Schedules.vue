@@ -196,11 +196,7 @@ export default {
     };
   },
   components: {
-    navbar,
     gotop,
-    location,
-    donate,
-    footerlayout,
   },
   methods: {
     async getSchedule() {

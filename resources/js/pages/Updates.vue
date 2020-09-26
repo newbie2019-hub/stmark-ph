@@ -158,9 +158,7 @@ export default {
     this.getPopularPost();
   },
   components: {
-
     gotop,
-
   },
 };
 </script>

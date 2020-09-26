@@ -9427,11 +9427,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   components: {
-    navbar: navbar,
-    gotop: _components_Gotop__WEBPACK_IMPORTED_MODULE_1__["default"],
-    location: location,
-    donate: donate,
-    footerlayout: footerlayout
+    gotop: _components_Gotop__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   methods: {
     getSchedule: function getSchedule() {
