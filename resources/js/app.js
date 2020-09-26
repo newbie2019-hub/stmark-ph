@@ -40,6 +40,7 @@ Vue.use(VueFileAgent);
 
 //LOAD VUE COMPONENTS
 Vue.component('updates', require('./pages/Updates.vue').default)
+Vue.component('schedules', require('./pages/Schedules.vue').default)
 Vue.component('blog', require('./pages/Blog.vue').default)
 Vue.component('log-in', () => import('./pages/Login.vue'))
 
