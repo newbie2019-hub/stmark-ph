@@ -5,7 +5,7 @@
         <div class="card">
           <div class="card-body">
             <div class="p-2 mb-3">
-              <a type="button" class="btn btn-sm btn-outline-primary" href="/manage/Updates">Return</a>
+              <a type="button" class="btn btn-sm btn-outline-primary" href="/manage/Updates"><i class="fas fa-caret-left"></i> Return</a>
             </div>
             <h4>
               <span class="p-2">

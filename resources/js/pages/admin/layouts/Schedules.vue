@@ -8,7 +8,7 @@
           class="btn btn-sm btn-outline-primary"
           data-toggle="modal"
           data-target="#scheduleModal"
-        >Add Schedule</button>
+        ><i class="fas fa-plus"></i> Add Schedule</button>
       </div>
     </div>
 

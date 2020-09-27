@@ -1,11 +1,14 @@
 <template>
   <div>
-    <!-- VIEW EDITOR -->
-
     <div id="editSection" class="row align-items-center p-2">
       <div class="col-md-6 col-lg-7">
         <h1 class="mt-4 admin-header-primary">POST SECTION</h1>
-        <a type="button" class="btn btn-sm btn-outline-primary" href="/manage/create">Add Post</a>
+        <a
+          type="button"
+          class="btn btn-sm btn-outline-primary"
+          href="/manage/create"
+          ><i class="fas fa-plus"></i> Add Post</a
+        >
       </div>
     </div>
 
@@ -19,6 +22,19 @@
       </ol>
     </nav>
 
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="postContent.length == 0">
+      <strong>No post yet!</strong> It appears that you don't have any post yet for your website. 
+      You may add a post now.
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
     <!-- CARDS --->
     <div class="row p-2">
       <div class="col-xl-4 col-md-6">
@@ -28,7 +44,7 @@
             <div class="row justify-content-center pt-4 pb-4">
               <div class="col-md-10 text-center">
                 <h1>
-                  <span class="active-header">{{postContent.length}}</span>
+                  <span class="active-header">{{ postContent.length }}</span>
                 </h1>
                 <p class="text-uppercase">Total Post</p>
               </div>
@@ -104,7 +120,7 @@ export default {
     handleAction(actionName, data) {
       switch (actionName) {
         case "view":
-          window.open(`https://stmark-ph.herokuapp.com/blog/${data.slug}`)
+          window.open(`https://stmark-ph.herokuapp.com/blog/${data.slug}`);
           break;
         case "edit":
           this.editPost(data);

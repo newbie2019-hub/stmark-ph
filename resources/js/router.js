@@ -4,10 +4,11 @@ Vue.use(Router)
 
 import anncm from './pages/admin/layouts/Updates'
 import sched from './pages/admin/layouts/Schedules'
-import img from './pages/admin/layouts/Images'
+import resource from './pages/admin/layouts/Resources'
 import acc from './pages/admin/layouts/Accounts'
 import create_announcement from './pages/admin/layouts/Create'
 import edit_announcement from './pages/admin/layouts/Edit'
+
 const routes = [
     {
         path: '/manage/Updates',
@@ -26,8 +27,8 @@ const routes = [
         component: sched,
     },
     {
-        path: '/manage/resources/images',
-        component: img,
+        path: '/manage/resources',
+        component: resource,
     },
     {
         path: '/manage/accounts',

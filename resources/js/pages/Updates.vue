@@ -106,9 +106,7 @@
         </div>
       </div>
     </section>
-    <gotop></gotop>
-  
-  </div>
+    </div>
 </template>
 <script>
 

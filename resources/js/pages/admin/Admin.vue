@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="sb-nav-fixed">
-      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">ADMIN PANEL</a>
+      <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
+        <a class="navbar-brand" href="#">ST MARK</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
           <i class="fas fa-bars"></i>
         </button>
@@ -38,51 +38,32 @@
             <div class="sb-sidenav-menu">
               <div class="nav">
                 <div class="sb-sidenav-menu-heading">UPDATES</div>
-                <a class="nav-link text-uppercase" href="index.html">
+                <router-link class="nav-link" to="/manage/Updates" v-on:click.native="activeMenu(0)" :class="{ activeMenu: isActiveIndex == 0 }">
                   <div class="sb-nav-link-icon">
-                    <i class="fas fa-newspaper"></i>
-                  </div><router-link class="nav-link" to="/manage/Updates">Posts</router-link>
-                </a>
-                <a class="nav-link text-uppercase" href="index.html">
+                     <i class="fas fa-newspaper"></i>
+                  </div> 
+                  Post
+                </router-link>
+                <router-link class="nav-link" to="/manage/schedule" v-on:click.native="activeMenu(1)" :class="{ activeMenu: isActiveIndex == 1 }">
                   <div class="sb-nav-link-icon">
-                    <i class="fas fa-calendar-alt"></i>
-                  </div><router-link class="nav-link" to="/manage/schedule">Schedules</router-link>
-                </a>
+                     <i class="fas fa-calendar-alt"></i>
+                  </div> 
+                  Schedules
+                </router-link>
                 <div class="sb-sidenav-menu-heading">RESOURCES</div>
-                <a
-                  class="nav-link collapsed"
-                  href="#"
-                  data-toggle="collapse"
-                  data-target="#collapseLayouts"
-                  aria-expanded="false"
-                  aria-controls="collapseLayouts"
-                >
+                <router-link class="nav-link" to="/manage/resources" v-on:click.native="activeMenu(2)" :class="{ activeMenu: isActiveIndex == 2  }">
                   <div class="sb-nav-link-icon">
-                    <i class="fas fa-align-justify"></i>
-                  </div> CATEGORIES
-                  <div class="sb-sidenav-collapse-arrow">
-                    <i class="fas fa-angle-down"></i>
-                  </div>
-                </a>
-                <div
-                  class="collapse"
-                  id="collapseLayouts"
-                  aria-labelledby="headingOne"
-                  data-parent="#sidenavAccordion"
-                >
-                  <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="#"><router-link class="nav-link" to="/manage/resources/images">Images</router-link></a>
-                    <a class="nav-link" href="#">Videos</a>
-                    <a class="nav-link" href="#">Books</a>
-                    <a class="nav-link" href="#">Audios</a>
-                  </nav>
-                </div>
-                 <div class="sb-sidenav-menu-heading">MANAGE</div>
-                <a class="nav-link text-uppercase" href="index.html">
+                    <i class="fas fa-folder-open"></i>
+                  </div> 
+                  Resources
+                </router-link>
+                <div class="sb-sidenav-menu-heading">MANAGE</div>
+                <router-link class="nav-link" to="/manage/accounts" v-on:click.native="activeMenu(3)" :class="{ activeMenu: isActiveIndex == 3  }">
                   <div class="sb-nav-link-icon">
                     <i class="fas fa-user-edit"></i>
-                  </div> <router-link class="nav-link" to="/manage/accounts">Accounts</router-link>
-                </a>
+                  </div> 
+                  Accounts
+                </router-link>
               </div>
             </div>
             <div class="sb-sidenav-footer">
@@ -108,17 +89,29 @@
     </div>
   </div>
 </template>
+<style >
+.activeMenu {
+  background: rgba(11, 164, 235, 0.733);
+  min-height: 40px;
+  transition: all .5s ease-in-out;
+}
+</style>
 <script>
 export default {
   props: ["user"],
   data() {
-    return {};
+    return {
+      isActiveIndex: null,
+    };
   },
   mounted(){
     
   },
   methods: {
-
+    activeMenu(i) {
+      console.log('hi')
+      this.isActiveIndex = i;
+    }
   },
   components: {},
 };
