@@ -116,6 +116,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
@@ -386,6 +391,15 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "row justify-content-center" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-info mt-4 mr-2",
+                            attrs: { type: "button", href: "/index" }
+                          },
+                          [_vm._v("Visit Site")]
+                        ),
+                        _vm._v(" "),
                         _c(
                           "a",
                           {

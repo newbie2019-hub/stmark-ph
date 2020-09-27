@@ -42,6 +42,11 @@
                 <div class="row justify-content-center">
                   <a
                     type="button"
+                    href="/index"
+                    class="btn btn-info mt-4 mr-2"
+                  >Visit Site</a>
+                  <a
+                    type="button"
                     @click="login"
                     class="btn btn-info mt-4"
                   >{{isLoading? 'Logging in...' : 'Log-in'}}</a>
