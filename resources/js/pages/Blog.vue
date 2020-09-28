@@ -23,10 +23,16 @@
             />
             <div class="container_header">
               <h3 class="text-light text-uppercase">{{post.title}}</h3>
+              <small>
               <p class="text-light">
-                <!-- <Icon type="ios-clock-outline" /> -->
-                {{post.created_at | formatDate}}
+                <i class="fa fa-clock"></i>
+                &nbsp;{{post.created_at | formatDate}}
               </p>
+              <p class="text-light">
+                <i class="fa fa-user-clock"></i>
+                Created by: {{post.user['name']}}
+              </p>
+              </small>
             </div>
           </div>
           <div class="pl-4 pr-4 pt-2">
@@ -96,6 +102,7 @@ export default {
   mounted() {},
   async created() {
     this.tags = this.post.tags;
+    console.log(this.post);
   },
   components: {
   },

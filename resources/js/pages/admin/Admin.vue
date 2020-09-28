@@ -109,7 +109,6 @@ export default {
   },
   methods: {
     activeMenu(i) {
-      console.log('hi')
       this.isActiveIndex = i;
     }
   },

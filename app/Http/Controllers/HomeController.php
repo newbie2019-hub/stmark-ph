@@ -9,12 +9,12 @@ class HomeController extends Controller
 {
     public function getUpdates(Request $request){
         // return Announcement::with('tags')->orderBy('id', 'DESC')->paginate($request->total);
-        return Announcement::orderBy('id', 'DESC')->paginate($request->total);//     return Announcement::limit($request->total)->get(['id', 'title','slug', 'featuredImage', 'description', 'content', 'created_at']); //
+        return Announcement::with(['tags','user'])->orderBy('id', 'DESC')->paginate($request->total);
     }
 
-    public function blogPost(Request $request, $slug){
+    public function blogPost($slug){
         
-        $post = Announcement::where('slug', $slug)->with('tags')->get(['id', 'title', 'featuredImage', 'content', 'created_at', 'views'])->first();
+        $post = Announcement::with(['tags','user:id,name'])->where('slug', $slug)->get(['id', 'title', 'featuredImage', 'content', 'created_at', 'views', 'user_id'])->first();
         $recent = Announcement::where('slug', '<>', $slug)->orderBy('id', 'DESC')->limit(5)->get(['id','title','slug','featuredImage','created_at']);
         
         if($post){

@@ -134,6 +134,7 @@ export default {
       const res = await this.callApi("get", `/getPost`);
       if (res.status == 200) {
         this.postContent = res.data.data;
+       
       } else {
         this.swr();
       }
@@ -205,6 +206,11 @@ export default {
           {
             title: "UPDATED AT",
             key: "updated_at",
+            orderable: false,
+          },
+          {
+            title: "USER_ID",
+            key: "user_id",
             orderable: false,
           },
         ],

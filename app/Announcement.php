@@ -11,7 +11,7 @@ class Announcement extends Model
         return $date->format('Y-m-d h:i a');
     }
     
-    protected $fillable = ['title', 'slug', 'featuredImage', 'description', 'content'];
+    protected $fillable = ['title', 'slug', 'featuredImage', 'description', 'content', 'user_id'];
 
     public function setSlugAttribute($title){
        return $this->attributes['slug'] = $this->uniqueSlug($title);
@@ -33,5 +33,8 @@ class Announcement extends Model
 
     public function tags(){
         return $this->hasMany('App\tags');
+    }
+    public function user(){
+        return  $this->belongsTo('App\User');
     }
 }

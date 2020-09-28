@@ -41,6 +41,7 @@
                           <br />
                           <!-- <Icon type="ios-eye" size="15" /> -->
                           VIEWS: {{content.views}}
+                          <br/>
                         </small>
                       </h5>
                       <p class="card-text text-justify">{{content.description}}</p>
@@ -51,7 +52,7 @@
                           class="button-card button-card--secondary"
                         >
                           Read More
-                          <!-- <Icon type="md-arrow-forward" /> -->
+                         
                         </a>
                       </div>
                     </div>
@@ -136,8 +137,8 @@ export default {
           this.hasContent = false;
         }
         this.pageInfo = res.data;
-
         this.postContent = res.data.data;
+        console.log(this.postContent);
       } else {
         this.swr();
       }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use App\Announcement;
 use App\User;
 use App\tags;
 
@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function addPost(Request $request){
+        $user = Auth::user();
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
@@ -26,19 +27,22 @@ class AdminController extends Controller
         
         DB::beginTransaction();
         try{
-            $announcement = Post::create([
+            $announcement = Announcement::create([
                 'title' => $request->title,
                 'slug' => $request->title,
                 'featuredImage' => $request->featuredImage,
                 'description' => $request->description,
                 'content' => $request->content,
+                'user_id' => $user->id,
             ]);
 
             foreach ($tags as $tag){
                 tags::insert(['announcement_id' => $announcement->id, 'name' => $tag]);
             }
             DB::commit();
-            return 'done';
+            return response()->json([
+                'msg' => 'Success'
+            ]);
         }catch (\Throwable $th){
             DB::rollback();
             return 'An error occured';
@@ -55,7 +59,7 @@ class AdminController extends Controller
 
         $data = [
             'id' => $request->id,
-            'slug' => Post::updateUniqueSlug($request->title),
+            'slug' => Announcement::updateUniqueSlug($request->title),
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
@@ -72,7 +76,7 @@ class AdminController extends Controller
         $tags = $request->tags;
         DB::beginTransaction();
         try{
-            Post::where('id', $request->id)->update($data);
+            Announcement::where('id', $request->id)->update($data);
 
             foreach ($tags as $tag){
                 tags::insert(['announcement_id' => $request->id, 'name' => $tag]);
@@ -86,17 +90,17 @@ class AdminController extends Controller
     }
 
     public function getPost(Request $request){
-        // return Post::paginate($request->total);
-        return Post::with('tags')->paginate($request->total);
+        // return Announcement::paginate($request->total);
+        return Announcement::with('tags')->paginate($request->total);
     }
 
     public function deletePost(Request $request){
          //DELETE THE IMAGE
-         $post = Post::where('id', $request->aID)->get(['featuredImage']);
+         $post = Announcement::where('id', $request->aID)->get(['featuredImage']);
          $this->deleteFileFromServer($post[0]['featuredImage']);
          
          tags::where('announcement_id', $request->aID)->delete();
-         return Post::where('id', $request->aID)->delete();
+         return Announcement::where('id', $request->aID)->delete();
         
     }
 
@@ -116,7 +120,7 @@ class AdminController extends Controller
 
     public function slug(){
         $title = 'This is a nice title';
-        return Post::create([
+        return Announcement::create([
             'title' => $title,
             'slug' => $title,
             'description' => 'This is some description, This is some description, ',
