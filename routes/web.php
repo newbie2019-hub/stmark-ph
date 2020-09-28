@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function ()
     Route::get('/postCount', 'AdminController@countPost');
     Route::get('/accCount', 'AdminController@countAcc');
     Route::get('/schedCount', 'AdminController@countSched');
+    
     //USER ROUTES
     Route::get('/get_users', 'AdminController@getUsers');
     Route::put('/updateUserAcc', 'AdminController@updateUser');

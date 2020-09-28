@@ -170,6 +170,10 @@ nav {
           &:nth-child(5) a {
             transition-delay: 0.6s;
           }
+
+          &:nth-child(6) a {
+            transition-delay: 0.7s;
+          }
         }    
 
         & .nav-wrapper ul li a {
@@ -247,6 +251,10 @@ nav {
       
       &:nth-child(5) a {
         transition-delay: 0.6s;
+      }
+
+      &:nth-child(6) a {
+        transition-delay: 0.7s;
       }
     }
   

@@ -19,7 +19,7 @@ export default {
         info(desc) {
             this.$toast.info(desc, {
                 position: "top-right",
-                timeout: 4000,
+                timeout: 2500,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -34,7 +34,7 @@ export default {
         notif(desc) {
             this.$toast(desc, {
                 position: "top-right",
-                timeout: 4500,
+                timeout: 3000,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -49,7 +49,7 @@ export default {
         success(desc) {
             this.$toast.success(desc, {
                 position: "top-right",
-                timeout: 4000,
+                timeout: 2500,
                 closeOnClick: true,
                 draggable: true,
                 draggablePercent: 0.6,
@@ -63,7 +63,7 @@ export default {
         w(desc) {
             this.$toast.warning(desc, {
                 position: "top-right",
-                timeout: 4000,
+                timeout: 2500,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -78,7 +78,7 @@ export default {
         err(desc) {
             this.$toast.error(desc, {
                 position: "top-right",
-                timeout: 4000,
+                timeout: 2500,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
@@ -93,7 +93,7 @@ export default {
         swr(desc = 'Something went wrong! Please try again.') {
             this.$toast.error(desc, {
                 position: "top-right",
-                timeout: 4000,
+                timeout: 2500,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,

@@ -186,7 +186,7 @@ class AdminController extends Controller
                 'name' => $request->fullName,
                 'email' => $request->email,
                 'password' => $password,
-                'role' => $request->role,
+                'role' => 'User'
             ]);
 
             //LOG-IN USER
@@ -222,7 +222,14 @@ class AdminController extends Controller
 
     public function index(){
         if(Auth::check()){
-            return view('manage');
+            $user = Auth::user();
+            if($user->role === 'Admin'){
+                return view('manage');
+            }
+            else{
+                return redirect('/');
+            }
+            
         }
         else
         {
@@ -231,8 +238,10 @@ class AdminController extends Controller
     }
     public function login(Request $request){
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            Auth::user();
-            return redirect('/manage');
+            $user = Auth::user();
+            if($user->role === 'Admin'){
+              return redirect('/manage');
+            }
         } else {
             return response()->json([
                 'msg' => 'Incorrect login details',
@@ -241,8 +250,22 @@ class AdminController extends Controller
     }
 
     public function logout(){
-            Auth::logout();
-            return redirect('/login');
+        $user = Auth::user();
+        if(Auth::check()){
+            if($user->role == 'Admin'){
+                Auth::logout();
+                return redirect('/login');
+            }
+            else{
+                Auth::logout();
+                return redirect('/');
+            }
+        }
+        else
+        {
+            return redirect('/');
+        }
     }
+
 
 }

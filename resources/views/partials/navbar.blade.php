@@ -15,6 +15,11 @@
             <li><a href="/schedules">Events</a></li>
             <li><a href="/resource">Resources</a></li>
             <li><a href="/updates">Updates</a></li>
+            @if (Auth::check())
+            <li><a href="/logout">Log-Out</a></li>
+            @else
+            <li><a href="/login">Log-In</a></li>
+            @endif
         </ul>
     </div>
 </nav>
