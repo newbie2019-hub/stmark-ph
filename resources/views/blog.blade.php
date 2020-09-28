@@ -15,6 +15,7 @@
     @include('partials.footer')
 </body>
 <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 <script src="{{ mix('/js/app.js') }}"></script>
 </html>
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Announcement;
+use App\Post;
 use App\User;
 use App\tags;
 
@@ -26,7 +26,7 @@ class AdminController extends Controller
         
         DB::beginTransaction();
         try{
-            $announcement = Announcement::create([
+            $announcement = Post::create([
                 'title' => $request->title,
                 'slug' => $request->title,
                 'featuredImage' => $request->featuredImage,
@@ -55,7 +55,7 @@ class AdminController extends Controller
 
         $data = [
             'id' => $request->id,
-            'slug' => Announcement::updateUniqueSlug($request->title),
+            'slug' => Post::updateUniqueSlug($request->title),
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
@@ -72,7 +72,7 @@ class AdminController extends Controller
         $tags = $request->tags;
         DB::beginTransaction();
         try{
-            Announcement::where('id', $request->id)->update($data);
+            Post::where('id', $request->id)->update($data);
 
             foreach ($tags as $tag){
                 tags::insert(['announcement_id' => $request->id, 'name' => $tag]);
@@ -86,17 +86,17 @@ class AdminController extends Controller
     }
 
     public function getPost(Request $request){
-        // return Announcement::paginate($request->total);
-        return Announcement::with('tags')->paginate($request->total);
+        // return Post::paginate($request->total);
+        return Post::with('tags')->paginate($request->total);
     }
 
     public function deletePost(Request $request){
          //DELETE THE IMAGE
-         $post = Announcement::where('id', $request->aID)->get(['featuredImage']);
+         $post = Post::where('id', $request->aID)->get(['featuredImage']);
          $this->deleteFileFromServer($post[0]['featuredImage']);
          
          tags::where('announcement_id', $request->aID)->delete();
-         return Announcement::where('id', $request->aID)->delete();
+         return Post::where('id', $request->aID)->delete();
         
     }
 
@@ -116,7 +116,7 @@ class AdminController extends Controller
 
     public function slug(){
         $title = 'This is a nice title';
-        return Announcement::create([
+        return Post::create([
             'title' => $title,
             'slug' => $title,
             'description' => 'This is some description, This is some description, ',
