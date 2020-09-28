@@ -413,7 +413,7 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "row justify-content-center" }, [
-                    _c("div", { staticClass: "col-sm-7 col-md-7 col-lg-7" }, [
+                    _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
                       _c(
                         "form",
                         {
@@ -623,7 +623,7 @@ var render = function() {
           _vm.isSignUp
             ? _c(
                 "div",
-                { staticClass: "col-sm-10 col-md-6 col-lg-6 text-light" },
+                { staticClass: "col-sm-10 col-md-8 col-lg-6 text-light" },
                 [
                   _c("h3", { staticClass: "mx-auto text-center pt-3 pb-3" }, [
                     _vm._v("SIGN-UP")

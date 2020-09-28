@@ -5,7 +5,7 @@
         <div class="col-sm-10 col-md-6 col-lg-6 text-light" v-if="!isSignUp">
           <h4 class="mx-auto text-center pt-3 pb-4 font-weight-bold">LOG-IN</h4>
           <div class="row justify-content-center">
-            <div class="col-sm-7 col-md-7 col-lg-7">
+            <div class="col-sm-8 col-md-8 col-lg-7">
               <form
                 class="needs-validation"
                 novalidate
@@ -72,7 +72,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-10 col-md-6 col-lg-6 text-light" v-if="isSignUp">
+        <div class="col-sm-10 col-md-8 col-lg-6 text-light" v-if="isSignUp">
           <h3 class="mx-auto text-center pt-3 pb-3">SIGN-UP</h3>
           <div class="row justify-content-center">
             <div class="col-sm-7 col-md-7 col-lg-7">
