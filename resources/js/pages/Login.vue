@@ -6,7 +6,7 @@
           <img class="img-fluid" v-bind:src="'/images/login.png'" loading="lazy" />
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6" v-if="!isSignUp">
-          <h3 class="mx-auto text-center pt-3 pb-5">Please Log-in</h3>
+          <h4 class="mx-auto text-center pt-3 pb-4 font-weight-bold">LOG-IN</h4>
           <div class="row justify-content-center">
             <div class="col-sm-7 col-md-7 col-lg-5">
               <form>

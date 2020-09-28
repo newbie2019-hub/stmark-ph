@@ -2,7 +2,7 @@
   <div>
     <div class="sb-nav-fixed">
       <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
-        <a class="navbar-brand" href="#">ST MARK</a>
+        <a class="navbar-brand" href="#">ST MARK - PH</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
           <i class="fas fa-bars"></i>
         </button>
@@ -37,28 +37,35 @@
           <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
               <div class="nav">
+                <div class="sb-sidenav-menu-heading">HOME</div>
+                <router-link class="nav-link" to="/manage" v-on:click.native="activeMenu(0)" :class="{ activeMenu: isActiveIndex == 0 }">
+                  <div class="sb-nav-link-icon">
+                     <i class="fas fa-newspaper"></i>
+                  </div> 
+                  Dashboard
+                </router-link>
                 <div class="sb-sidenav-menu-heading">UPDATES</div>
-                <router-link class="nav-link" to="/manage/Updates" v-on:click.native="activeMenu(0)" :class="{ activeMenu: isActiveIndex == 0 }">
+                <router-link class="nav-link" to="/manage/Updates" v-on:click.native="activeMenu(1)" :class="{ activeMenu: isActiveIndex == 1 }">
                   <div class="sb-nav-link-icon">
                      <i class="fas fa-newspaper"></i>
                   </div> 
                   Post
                 </router-link>
-                <router-link class="nav-link" to="/manage/schedule" v-on:click.native="activeMenu(1)" :class="{ activeMenu: isActiveIndex == 1 }">
+                <router-link class="nav-link" to="/manage/schedule" v-on:click.native="activeMenu(2)" :class="{ activeMenu: isActiveIndex == 2 }">
                   <div class="sb-nav-link-icon">
                      <i class="fas fa-calendar-alt"></i>
                   </div> 
                   Schedules
                 </router-link>
                 <div class="sb-sidenav-menu-heading">RESOURCES</div>
-                <router-link class="nav-link" to="/manage/resources" v-on:click.native="activeMenu(2)" :class="{ activeMenu: isActiveIndex == 2  }">
+                <router-link class="nav-link" to="/manage/resources" v-on:click.native="activeMenu(3)" :class="{ activeMenu: isActiveIndex == 3  }">
                   <div class="sb-nav-link-icon">
                     <i class="fas fa-folder-open"></i>
                   </div> 
                   Resources
                 </router-link>
                 <div class="sb-sidenav-menu-heading">MANAGE</div>
-                <router-link class="nav-link" to="/manage/accounts" v-on:click.native="activeMenu(3)" :class="{ activeMenu: isActiveIndex == 3  }">
+                <router-link class="nav-link" to="/manage/accounts" v-on:click.native="activeMenu(4)" :class="{ activeMenu: isActiveIndex == 4  }">
                   <div class="sb-nav-link-icon">
                     <i class="fas fa-user-edit"></i>
                   </div> 
@@ -97,6 +104,7 @@
 }
 </style>
 <script>
+
 export default {
   props: ["user"],
   data() {
@@ -105,7 +113,15 @@ export default {
     };
   },
   mounted(){
-    
+    this.activeMenu(0);
+    const currentUser = {
+      id: this.user['id'],
+      name: this.user['name'],
+      email: this.user['email'],
+      role: this.user['role'],
+    }
+   
+    this.$store.commit("setUserObj", currentUser);
   },
   methods: {
     activeMenu(i) {

@@ -143,13 +143,28 @@ class AdminController extends Controller
         return;
     }
 
+    //DASHBOARD
+    function countPost(){
+        return Announcement::count();
+    }
+
+    function countAcc(){
+        return User::count();
+    }
+
+    function countSched(){
+        return Announcement::count();
+    }
+
+
+    //USER FUNCTIONS
     public function createUser(Request $request){
             // validate request
             $this->validate($request, [
                 'fullName' => 'required',
                 'email' => 'bail|required|email|unique:users',
                 'password' => 'bail|required|min:6',
-                'role' => 'requried',
+                'role' => 'required',
             ]);
             $password = bcrypt($request->password);
             return User::create([

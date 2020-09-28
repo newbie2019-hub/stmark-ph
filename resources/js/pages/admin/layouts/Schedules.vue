@@ -22,55 +22,6 @@
       </ol>
     </nav>
 
-    <!-- CARDS --->
-    <div class="row p-2">
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-          <div class="card-body">
-            TOTAL
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-                <p class="text-uppercase">SCHEDULES</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-info border-left text-white mb-4">
-          <div class="card-body">
-            ACTIVE
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-                <p class="text-uppercase">N/A</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-success text-white mb-4">
-          <div class="card-body">
-            PINNED
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-                <p class="text-uppercase">N/A</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- TABLE -->
     <div class="row p-2">
       <div class="col-sm-12 col-md-12">

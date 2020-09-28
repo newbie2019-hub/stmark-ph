@@ -299,9 +299,14 @@ var render = function() {
           _vm._v(" "),
           !_vm.isSignUp
             ? _c("div", { staticClass: "col-sm-6 col-md-6 col-lg-6" }, [
-                _c("h3", { staticClass: "mx-auto text-center pt-3 pb-5" }, [
-                  _vm._v("Please Log-in")
-                ]),
+                _c(
+                  "h4",
+                  {
+                    staticClass:
+                      "mx-auto text-center pt-3 pb-4 font-weight-bold"
+                  },
+                  [_vm._v("LOG-IN")]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "row justify-content-center" }, [
                   _c("div", { staticClass: "col-sm-7 col-md-7 col-lg-5" }, [

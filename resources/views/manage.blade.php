@@ -6,6 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous">
     </script>
+    <meta name="description" content="The first Coptic Orthodox Church in the Philippines ministering the Word of God and serving
+    congregants worldwide through it’s websites and TV programs." />
+    <link rel="icon" href="{{ asset('/images/stmarkicon.png') }}" sizes="32x32" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" />

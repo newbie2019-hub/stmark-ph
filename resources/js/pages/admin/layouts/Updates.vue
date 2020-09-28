@@ -35,54 +35,6 @@
       </button>
     </div>
 
-    <!-- CARDS --->
-    <div class="row p-2">
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-primary text-white mb-4">
-          <div class="card-body">
-            TOTAL
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{ postContent.length }}</span>
-                </h1>
-                <p class="text-uppercase">Total Post</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-info border-left text-white mb-4">
-          <div class="card-body">
-            ACTIVE
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-                <p class="text-uppercase">Active Post</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-md-6">
-        <div class="card bg-success text-white mb-4">
-          <div class="card-body">
-            PINNED
-            <div class="row justify-content-center pt-4 pb-4">
-              <div class="col-md-10 text-center">
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-                <p class="text-uppercase">Pinned Post</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="row p-2">
       <div class="col-sm-12 col-md-12">
         <div class="card">

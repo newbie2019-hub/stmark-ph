@@ -22,42 +22,6 @@
       </ol>
     </nav>
 
-    <!-- CARDS --->
-    <div class="row p-2 pt-3">
-      <div class="col-sm-6 col-xl-5 col-md-6">
-        <div class="card bg-info text-white mb-4">
-          <div class="card-body">
-            ACCOUNT
-            <div class="row justify-content-center align-items-center pt-4 pb-4">
-
-              <div class="col-md-8 col-sm-6 text-lg-left">
-                <p class="text-uppercase">Admin Accounts</p>
-                <h1>
-                  <span class="active-header">4</span>
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-xl-5 col-md-6">
-        <div class="card bg-success text-white mb-4">
-          <div class="card-body">
-            TOTAL
-            <div class="row justify-content-center align-items-center pt-4 pb-4">
-
-              <div class="col-md-8 col-sm-6 text-lg-left">
-                <p class="text-uppercase">Registered Accounts</p>
-                <h1>
-                  <span class="active-header">{{}}</span>
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- TABLE -->
     <div class="row p-2">
       <div class="col-sm-12 col-md-12">
@@ -202,6 +166,7 @@ export default {
               this.isAdding = false;
             }
           } else {
+            this.isAdding = false;
             this.swr();
           }
         }

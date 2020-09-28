@@ -20,6 +20,12 @@ export default new Vuex.Store({
             tags: [],
             content: '',
         },
+        userObj: {
+            id: '',
+            name: '',
+            email: '',
+            role: '',
+        },
     },
     getters: {
         getDeleteModalObj(state){
@@ -27,6 +33,9 @@ export default new Vuex.Store({
         },
         getEditPostObj(state){
             return state.editPostObj
+        },
+        getUserObj(state){
+            return state.userObj
         }
     },
 
@@ -58,7 +67,11 @@ export default new Vuex.Store({
                 content: '',
             }
             state.editPostObj = editPostObj
-        }
+        },
+
+        setUserObj(state, data){
+            state.userObj = data
+        },
     },
     actions :{
 
