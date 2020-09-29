@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\AdminCheck;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,7 @@ Route::post('/deleteFImage', 'AdminController@deleteFImage');
 Route::post('/create_user', 'AdminController@createUser');
 Route::post('/sign-up', 'AdminController@signup');
 
-Route::middleware('auth')->group(function () 
+Route::middleware([AdminCheck::class])->group(function () 
 {
     //DASHBOARD ROUTES
     Route::get('/postCount', 'AdminController@countPost');
