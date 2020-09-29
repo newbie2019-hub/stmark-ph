@@ -400,7 +400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".wasvalidated .form-control:invalid,\n.form-control.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(1.5em + 0.75rem);\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.btn-container {\n  position: fixed;\n  z-index: 999;\n  top: 1rem;\n  right: 2.5rem;\n}\n.element-container {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 70%;\n}\n.form-control {\n  background: #3a44a8;\n  border: 0;\n}\n.form-control:focus {\n  background: #3a44a8;\n  border-color: #14d0e9 !important;\n  box-shadow: 0 0 0 0.2rem rgba(20, 208, 233, 0.459);\n}", ""]);
+exports.push([module.i, ".wasvalidated .form-control:invalid,\n.form-control.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(1.5em + 0.75rem);\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.btn-container {\n  position: fixed;\n  z-index: 999;\n  top: 1.2rem;\n  right: 2.3rem;\n}\n.element-container {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 70%;\n}\n.form-control {\n  background: #3a44a8;\n  border: 0;\n}\n.form-control:focus {\n  background: #3a44a8;\n  border-color: #14d0e9 !important;\n  box-shadow: 0 0 0 0.2rem rgba(20, 208, 233, 0.459);\n}", ""]);
 
 // exports
 
@@ -461,7 +461,7 @@ var render = function() {
           staticStyle: {
             position: "fixed",
             top: "2rem",
-            left: "4rem",
+            left: "2.8rem",
             "z-index": "999"
           }
         },
@@ -778,7 +778,7 @@ var render = function() {
                       [_vm._v("\n            We need your . . .\n          ")]
                     ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group text-light mt-2" }, [
+                    _c("div", { staticClass: "form-group text-light mt-3" }, [
                       _vm._v("\n            Full Name\n            "),
                       _c("div", { staticClass: "d-flex align-items-center" }, [
                         _c("li", {

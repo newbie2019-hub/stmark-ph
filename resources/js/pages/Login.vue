@@ -3,7 +3,7 @@
     <div class="container-fluid h-100">
       <h6
         class="font-weight-bold login-logo"
-        style="position: fixed; top: 2rem; left: 4rem; z-index: 999"
+        style="position: fixed; top: 2rem; left: 2.8rem; z-index: 999"
       >
         ST. MARK-PH
       </h6>
@@ -130,7 +130,7 @@
             <p class="mx-auto text-center text-light lead">
               We need your . . .
             </p>
-            <div class="form-group text-light mt-2">
+            <div class="form-group text-light mt-3">
               Full Name
               <div class="d-flex align-items-center">
                 <li
@@ -200,8 +200,8 @@
 .btn-container {
   position: fixed;
   z-index: 999;
-  top: 1rem;
-  right: 2.5rem;
+  top: 1.2rem;
+  right: 2.3rem;
 }
 .element-container {
   position: absolute;
