@@ -1,153 +1,193 @@
 <template>
-  <div class="hero" style="height: 100vh">
+  <div class="" style="height: 100vh">
     <div class="container-fluid h-100">
+      <h6
+        class="font-weight-bold login-logo"
+        style="position: fixed; top: 2rem; left: 4rem; z-index: 999"
+      >
+        ST. MARK-PH
+      </h6>
+      <div class="btn-container">
+        <a
+          href="#"
+          @click.prevent="isSignUp = !isSignUp"
+          class="btn btn-sm btn-outline-light rounded-pill"
+          style="min-width: 75px; margin-right: 10px"
+          >{{isSignUp ? 'Login' : 'Sign Up' }}</a
+        >
+        <a
+          href="/"
+          class="btn btn-sm btn-outline-light rounded-pill"
+          style="min-width: 75px"
+          >Visit Site</a
+        >
+      </div>
       <div class="row d-flex h-100 justify-content-center align-items-center">
-        <div class="col-sm-10 col-md-6 col-lg-6 text-light" v-if="!isSignUp">
-          <h4 class="mx-auto text-center pt-3 pb-4 font-weight-bold">LOG-IN</h4>
-          <div class="row justify-content-center">
-            <div class="col-sm-8 col-md-8 col-lg-7">
-              <form
-                class="needs-validation"
-                novalidate
-                :class="{ wasvalidated: isValidated }"
-              >
-                <div class="form-group">
-                  Email Address
-                  <div class="d-flex align-items-center">
-                    <li
-                      class="fas fa-envelope position-absolute ml-2 text-dark"
-                    ></li>
-                    <input
-                      type="email"
-                      v-model="data.email"
-                      class="form-control"
-                      id="user_email"
-                      placeholder="sampleemail@gmail.com"
-                      aria-describedby="Email Address"
-                      style="padding-left: 30px"
-                      @keydown.enter="login"
-                      required
-                    />
-                    <div class="valid-feedback">Email address valid!</div>
-                    <div class="invalid-feedback">
-                      Email address should be valid
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  Password
-                  <div class="d-flex align-items-center">
-                    <i class="fas fa-key position-absolute ml-2 text-dark"></i>
-                    <input
-                      type="password"
-                      v-model="data.password"
-                      class="form-control"
-                      id="user_password"
-                      placeholder="******"
-                      style="padding-left: 30px"
-                      @keydown.enter="login"
-                      required
-                    />
-                    <div class="invalid-feedback">Password is required</div>
-                  </div>
-                </div>
-                <p class="">
-                  Dont have an account?
-                  <a
-                    class="text-center mx-auto text-warning"
-                    type="button"
-                    @click="isSignUp = !isSignUp"
-                    >Sign-Up</a
-                  >
-                </p>
-                <div class="row justify-content-center">
-                  <a type="button" href="/" class="btn btn-info mt-4 mr-2"
-                    >Visit Site</a
-                  >
-                  <a type="button" @click="login" class="btn btn-info mt-4">{{
-                    isLoading ? "Logging in..." : "Log-in"
-                  }}</a>
-                </div>
-              </form>
-            </div>
+        <div class="col-sm-12 col-md-7 col-lg-8 h-100 st-mark">
+          <div class="element-container">
+            <img
+              :src="'/images/connection.svg'"
+              alt=""
+              class="img-fluid"
+              style="width: 50%; display: block; margin: 0 auto"
+            />
+            <h3
+              class="mx-auto text-center pt-5 text-uppercase font-weight-bold"
+              style="letter-spacing: 0.4px; color: rgb(43, 160, 230)"
+            >
+              Welcome to St. Mark Coptic <br />
+              Orthodox Church, Philippines
+            </h3>
+            <h6 class="mx-auto text-center mt-3">
+              Please log-in to your account to get started
+            </h6>
           </div>
         </div>
-        <div class="col-sm-10 col-md-8 col-lg-6 text-light" v-if="isSignUp">
-          <h3 class="mx-auto text-center pt-3 pb-3">SIGN-UP</h3>
-          <div class="row justify-content-center">
-            <div class="col-sm-7 col-md-7 col-lg-7">
-              
-              <div class="form-group">
-                Full Name
+        <div
+          class="col-sm-12 col-md-5 col-lg-4"
+          style="background: rgb(75, 85, 193); height: 100vh"
+          v-if="!isSignUp"
+        >
+          <div class="element-container">
+            <img
+              :src="'/images/mobile_connection.svg'"
+              alt=""
+              class="img-fluid img-mobile"
+              style="width: 60%; display: block; margin: 0 auto"
+            />
+            <p class="mx-auto text-center text-light lead">Welcome !</p>
+            <p class="mx-auto text-center text-light lead">
+              Sign-in to your account
+            </p>
+            <form
+              class="needs-validation"
+              novalidate
+              :class="{ wasvalidated: isValidated }"
+            >
+              <div class="form-group text-light lead">
+                <p class="pt-3"><small>Email</small></p>
                 <div class="d-flex align-items-center">
                   <li
-                    class="fas fa-user-circle position-absolute ml-2 text-dark"
+                    class="fas fa-envelope position-absolute ml-2 text-light"
                   ></li>
                   <input
                     type="text"
-                    class="form-control"
-                    placeholder="Juan Dela Cruz"
-                    v-model="data.fullName"
-                    style="padding-left: 30px"
-                    @keydown.enter="SignUp"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                Email Address
-                <div class="d-flex align-items-center">
-                  <li
-                    class="fas fa-envelope position-absolute ml-2 text-dark"
-                  ></li>
-                  <input
-                    type="email"
                     v-model="data.email"
-                    class="form-control"
-                    id="user_email"
-                    placeholder="sampleemail@gmail.com"
+                    class="form-control text-light"
+                    placeholder="sample_email@gmail.com"
                     aria-describedby="Email Address"
-                    style="padding-left: 30px"
+                    style="padding-left: 35px"
+                    @keydown.enter="login"
+                    required
                   />
+                  <div class="valid-feedback">Email address valid!</div>
+                  <div class="invalid-feedback">
+                    Email address should be valid
+                  </div>
                 </div>
               </div>
-              <div class="form-group">
-                Password
+              <div class="form-group text-light lead">
+                <p class=""><small>Password</small></p>
                 <div class="d-flex align-items-center">
-                  <i class="fas fa-key position-absolute ml-2 text-dark"></i>
+                  <i class="fas fa-key position-absolute ml-2 text-light"></i>
                   <input
                     type="password"
                     v-model="data.password"
-                    class="form-control"
+                    class="form-control text-light"
                     id="user_password"
                     placeholder="******"
-                    style="padding-left: 30px"
-                     @keydown.enter="SignUp"
+                    style="padding-left: 35px"
+                    @keydown.enter="login"
+                    required
                   />
+                  <div class="invalid-feedback">Password is required</div>
                 </div>
-              </div>
-              <p class="">
-                Already have an account?
                 <a
-                  class="text-center mx-auto text-warning mt-1"
                   type="button"
-                  @click="isSignUp = !isSignUp"
-                  >Sign-In</a
+                  @click="login"
+                  class="btn btn-info rounded-pill btn-block mt-4"
+                  >{{ isLoading ? "Logging in..." : "Login" }}</a
                 >
-              </p>
-              <div class="row justify-content-center">
-                <a type="button" @click="SignUp" class="btn btn-info mt-4"
-                  ><i class="fas fa-user-plus"></i>
-                  {{ isLoading ? "Signing Up..." : "Sign-Up" }}</a
-                >
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- SIGN-UP --->
+        <div
+          class="col-sm-12 col-md-5 col-lg-4"
+          style="background: rgb(75, 85, 193); height: 100vh"
+          v-if="isSignUp"
+        >
+          <div class="element-container">
+            <img
+              :src="'/images/mobile_connection.svg'"
+              alt=""
+              class="img-fluid img-mobile"
+              style="width: 60%; display: block; margin: 0 auto"
+            />
+            <p class="mx-auto text-center text-light lead">Welcome !</p>
+            <p class="mx-auto text-center text-light lead">
+              We need your . . .
+            </p>
+            <div class="form-group text-light mt-2">
+              Full Name
+              <div class="d-flex align-items-center">
+                <li
+                  class="fas fa-user-circle position-absolute ml-2 text-light"
+                ></li>
+                <input
+                  type="text"
+                  class="form-control text-light"
+                  placeholder="Juan Dela Cruz"
+                  v-model="data.fullName"
+                  style="padding-left: 30px"
+                  @keydown.enter="SignUp"
+                />
               </div>
             </div>
+            <div class="form-group text-light">
+              Email Address
+              <div class="d-flex align-items-center">
+                <li
+                  class="fas fa-envelope position-absolute ml-2 text-light"
+                ></li>
+                <input
+                  type="email"
+                  v-model="data.email"
+                  class="form-control  text-light"
+                  id="user_email"
+                  placeholder="sampleemail@gmail.com"
+                  aria-describedby="Email Address"
+                  style="padding-left: 30px"
+                />
+              </div>
+            </div>
+            <div class="form-group  text-light">
+              Password
+              <div class="d-flex align-items-center">
+                <i class="fas fa-key position-absolute ml-2 text-light"></i>
+                <input
+                  type="password"
+                  v-model="data.password"
+                  class="form-control  text-light"
+                  id="user_password"
+                  placeholder="******"
+                  style="padding-left: 30px"
+                  @keydown.enter="SignUp"
+                />
+              </div>
+            </div>
+             <a type="button" @click="SignUp" class="btn btn-info btn-block rounded-pill mt-4">
+                {{ isLoading ? "Signing Up..." : "Sign Up" }}
+             </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<style >
+<style lang="scss">
 .wasvalidated .form-control:invalid,
 .form-control.is-invalid {
   border-color: #dc3545;
@@ -156,6 +196,29 @@
   background-repeat: no-repeat;
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+.btn-container {
+  position: fixed;
+  z-index: 999;
+  top: 1rem;
+  right: 2.5rem;
+}
+.element-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+.form-control {
+  background: rgba(58, 68, 168);
+  border: 0;
+
+  &:focus {
+    background: rgba(58, 68, 168);
+    border-color: rgb(20, 208, 233) !important;
+    box-shadow: 0 0 0 0.2rem rgba(20, 208, 233, 0.459);
+  }
 }
 </style>
 <script>

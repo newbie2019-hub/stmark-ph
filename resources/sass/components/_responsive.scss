@@ -13,17 +13,7 @@
     }
 
     .custom-image {
-        width: 4rem;
-    }
-
-    .custom-image {
         width: 4.4rem;
-    }
-
-    .ivu-back-top i {
-        color: #fff;
-        font-size: 20px !important;
-        padding: 4px 6px !important;
     }
 
     .header-location {
@@ -36,6 +26,14 @@
 
     .header-schedule {
         font-size: 3.2rem;
+    }
+
+    .element-container {
+        width: 60% !important;
+    }
+
+    .btn-container {
+        top: 1.5rem !important;
     }
 }
 
@@ -74,6 +72,9 @@
         font-size: 4.5rem;
     }
 
+    .btn-container {
+        top: 1.5rem !important;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -102,7 +103,24 @@
         padding: 0 4rem !important;
     }
 }
+@media only screen and (max-width: 768px) {
+ .st-mark {
+     display: none !important;
+ }
 
+ .element-container {
+    width: 55% !important;
+ }
+
+ .img-mobile{
+     display: block !important;
+     padding-bottom: 1rem !important;
+ }
+
+ .login-logo{
+     color: white !important;
+ }
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     html {
@@ -127,6 +145,10 @@
 
     .footer-container {
         padding: 0 6rem !important;
+    }
+    
+    .img-mobile{
+        display: none !important;
     }
 }
 
@@ -154,6 +176,14 @@
 
     .updates-container {
         max-width: 400px;
+    }
+
+    .element-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
     }
    
 }

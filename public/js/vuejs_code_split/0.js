@@ -177,6 +177,69 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
@@ -325,10 +388,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -337,22 +400,22 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wasvalidated .form-control:invalid,\r\n.form-control.is-invalid {\r\n  border-color: #dc3545;\r\n  padding-right: calc(1.5em + 0.75rem);\r\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\r\n  background-repeat: no-repeat;\r\n  background-position: right calc(0.375em + 0.1875rem) center;\r\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\r\n", ""]);
+exports.push([module.i, ".wasvalidated .form-control:invalid,\n.form-control.is-invalid {\n  border-color: #dc3545;\n  padding-right: calc(1.5em + 0.75rem);\n  background-image: url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e\");\n  background-repeat: no-repeat;\n  background-position: right calc(0.375em + 0.1875rem) center;\n  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);\n}\n.btn-container {\n  position: fixed;\n  z-index: 999;\n  top: 1rem;\n  right: 2.5rem;\n}\n.element-container {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 70%;\n}\n.form-control {\n  background: #3a44a8;\n  border: 0;\n}\n.form-control:focus {\n  background: #3a44a8;\n  border-color: #14d0e9 !important;\n  box-shadow: 0 0 0 0.2rem rgba(20, 208, 233, 0.459);\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -389,8 +452,50 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "hero", staticStyle: { height: "100vh" } }, [
+  return _c("div", { staticStyle: { height: "100vh" } }, [
     _c("div", { staticClass: "container-fluid h-100" }, [
+      _c(
+        "h6",
+        {
+          staticClass: "font-weight-bold login-logo",
+          staticStyle: {
+            position: "fixed",
+            top: "2rem",
+            left: "4rem",
+            "z-index": "999"
+          }
+        },
+        [_vm._v("\n      ST. MARK-PH\n    ")]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "btn-container" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-sm btn-outline-light rounded-pill",
+            staticStyle: { "min-width": "75px", "margin-right": "10px" },
+            attrs: { href: "#" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.isSignUp = !_vm.isSignUp
+              }
+            }
+          },
+          [_vm._v(_vm._s(_vm.isSignUp ? "Login" : "Sign Up"))]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-sm btn-outline-light rounded-pill",
+            staticStyle: { "min-width": "75px" },
+            attrs: { href: "/" }
+          },
+          [_vm._v("Visit Site")]
+        )
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         {
@@ -398,41 +503,91 @@ var render = function() {
             "row d-flex h-100 justify-content-center align-items-center"
         },
         [
+          _c(
+            "div",
+            { staticClass: "col-sm-12 col-md-7 col-lg-8 h-100 st-mark" },
+            [
+              _c("div", { staticClass: "element-container" }, [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  staticStyle: {
+                    width: "50%",
+                    display: "block",
+                    margin: "0 auto"
+                  },
+                  attrs: { src: "/images/connection.svg", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
+                _c("h6", { staticClass: "mx-auto text-center mt-3" }, [
+                  _vm._v(
+                    "\n            Please log-in to your account to get started\n          "
+                  )
+                ])
+              ])
+            ]
+          ),
+          _vm._v(" "),
           !_vm.isSignUp
             ? _c(
                 "div",
-                { staticClass: "col-sm-10 col-md-6 col-lg-6 text-light" },
+                {
+                  staticClass: "col-sm-12 col-md-5 col-lg-4",
+                  staticStyle: {
+                    background: "rgb(75, 85, 193)",
+                    height: "100vh"
+                  }
+                },
                 [
-                  _c(
-                    "h4",
-                    {
-                      staticClass:
-                        "mx-auto text-center pt-3 pb-4 font-weight-bold"
-                    },
-                    [_vm._v("LOG-IN")]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row justify-content-center" }, [
-                    _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-7" }, [
-                      _c(
-                        "form",
-                        {
-                          staticClass: "needs-validation",
-                          class: { wasvalidated: _vm.isValidated },
-                          attrs: { novalidate: "" }
-                        },
-                        [
-                          _c("div", { staticClass: "form-group" }, [
-                            _vm._v(
-                              "\n                Email Address\n                "
-                            ),
+                  _c("div", { staticClass: "element-container" }, [
+                    _c("img", {
+                      staticClass: "img-fluid img-mobile",
+                      staticStyle: {
+                        width: "60%",
+                        display: "block",
+                        margin: "0 auto"
+                      },
+                      attrs: { src: "/images/mobile_connection.svg", alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "mx-auto text-center text-light lead" },
+                      [_vm._v("Welcome !")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "mx-auto text-center text-light lead" },
+                      [
+                        _vm._v(
+                          "\n            Sign-in to your account\n          "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "form",
+                      {
+                        staticClass: "needs-validation",
+                        class: { wasvalidated: _vm.isValidated },
+                        attrs: { novalidate: "" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "form-group text-light lead" },
+                          [
+                            _vm._m(1),
+                            _vm._v(" "),
                             _c(
                               "div",
                               { staticClass: "d-flex align-items-center" },
                               [
                                 _c("li", {
                                   staticClass:
-                                    "fas fa-envelope position-absolute ml-2 text-dark"
+                                    "fas fa-envelope position-absolute ml-2 text-light"
                                 }),
                                 _vm._v(" "),
                                 _c("input", {
@@ -444,12 +599,11 @@ var render = function() {
                                       expression: "data.email"
                                     }
                                   ],
-                                  staticClass: "form-control",
-                                  staticStyle: { "padding-left": "30px" },
+                                  staticClass: "form-control text-light",
+                                  staticStyle: { "padding-left": "35px" },
                                   attrs: {
-                                    type: "email",
-                                    id: "user_email",
-                                    placeholder: "sampleemail@gmail.com",
+                                    type: "text",
+                                    placeholder: "sample_email@gmail.com",
                                     "aria-describedby": "Email Address",
                                     required: ""
                                   },
@@ -489,24 +643,27 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("div", { staticClass: "invalid-feedback" }, [
                                   _vm._v(
-                                    "\n                    Email address should be valid\n                  "
+                                    "\n                  Email address should be valid\n                "
                                   )
                                 ])
                               ]
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _vm._v(
-                              "\n                Password\n                "
-                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "form-group text-light lead" },
+                          [
+                            _vm._m(2),
+                            _vm._v(" "),
                             _c(
                               "div",
                               { staticClass: "d-flex align-items-center" },
                               [
                                 _c("i", {
                                   staticClass:
-                                    "fas fa-key position-absolute ml-2 text-dark"
+                                    "fas fa-key position-absolute ml-2 text-light"
                                 }),
                                 _vm._v(" "),
                                 _c("input", {
@@ -518,8 +675,8 @@ var render = function() {
                                       expression: "data.password"
                                     }
                                   ],
-                                  staticClass: "form-control",
-                                  staticStyle: { "padding-left": "30px" },
+                                  staticClass: "form-control text-light",
+                                  staticStyle: { "padding-left": "35px" },
                                   attrs: {
                                     type: "password",
                                     id: "user_password",
@@ -560,61 +717,28 @@ var render = function() {
                                   _vm._v("Password is required")
                                 ])
                               ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", {}, [
-                            _vm._v(
-                              "\n                Dont have an account?\n                "
                             ),
+                            _vm._v(" "),
                             _c(
                               "a",
                               {
-                                staticClass: "text-center mx-auto text-warning",
+                                staticClass:
+                                  "btn btn-info rounded-pill btn-block mt-4",
                                 attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.isSignUp = !_vm.isSignUp
-                                  }
-                                }
+                                on: { click: _vm.login }
                               },
-                              [_vm._v("Sign-Up")]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "row justify-content-center" },
-                            [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "btn btn-info mt-4 mr-2",
-                                  attrs: { type: "button", href: "/" }
-                                },
-                                [_vm._v("Visit Site")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "btn btn-info mt-4",
-                                  attrs: { type: "button" },
-                                  on: { click: _vm.login }
-                                },
-                                [
-                                  _vm._v(
-                                    _vm._s(
-                                      _vm.isLoading ? "Logging in..." : "Log-in"
-                                    )
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.isLoading ? "Logging in..." : "Login"
                                   )
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      ]
+                    )
                   ])
                 ]
               )
@@ -623,219 +747,203 @@ var render = function() {
           _vm.isSignUp
             ? _c(
                 "div",
-                { staticClass: "col-sm-10 col-md-8 col-lg-6 text-light" },
+                {
+                  staticClass: "col-sm-12 col-md-5 col-lg-4",
+                  staticStyle: {
+                    background: "rgb(75, 85, 193)",
+                    height: "100vh"
+                  }
+                },
                 [
-                  _c("h3", { staticClass: "mx-auto text-center pt-3 pb-3" }, [
-                    _vm._v("SIGN-UP")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row justify-content-center" }, [
-                    _c("div", { staticClass: "col-sm-7 col-md-7 col-lg-7" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _vm._v("\n              Full Name\n              "),
-                        _c(
-                          "div",
-                          { staticClass: "d-flex align-items-center" },
-                          [
-                            _c("li", {
-                              staticClass:
-                                "fas fa-user-circle position-absolute ml-2 text-dark"
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.data.fullName,
-                                  expression: "data.fullName"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              staticStyle: { "padding-left": "30px" },
-                              attrs: {
-                                type: "text",
-                                placeholder: "Juan Dela Cruz"
-                              },
-                              domProps: { value: _vm.data.fullName },
-                              on: {
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.SignUp($event)
-                                },
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.data,
-                                    "fullName",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _vm._v("\n              Email Address\n              "),
-                        _c(
-                          "div",
-                          { staticClass: "d-flex align-items-center" },
-                          [
-                            _c("li", {
-                              staticClass:
-                                "fas fa-envelope position-absolute ml-2 text-dark"
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.data.email,
-                                  expression: "data.email"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              staticStyle: { "padding-left": "30px" },
-                              attrs: {
-                                type: "email",
-                                id: "user_email",
-                                placeholder: "sampleemail@gmail.com",
-                                "aria-describedby": "Email Address"
-                              },
-                              domProps: { value: _vm.data.email },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.data,
-                                    "email",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "form-group" }, [
-                        _vm._v("\n              Password\n              "),
-                        _c(
-                          "div",
-                          { staticClass: "d-flex align-items-center" },
-                          [
-                            _c("i", {
-                              staticClass:
-                                "fas fa-key position-absolute ml-2 text-dark"
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.data.password,
-                                  expression: "data.password"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              staticStyle: { "padding-left": "30px" },
-                              attrs: {
-                                type: "password",
-                                id: "user_password",
-                                placeholder: "******"
-                              },
-                              domProps: { value: _vm.data.password },
-                              on: {
-                                keydown: function($event) {
-                                  if (
-                                    !$event.type.indexOf("key") &&
-                                    _vm._k(
-                                      $event.keyCode,
-                                      "enter",
-                                      13,
-                                      $event.key,
-                                      "Enter"
-                                    )
-                                  ) {
-                                    return null
-                                  }
-                                  return _vm.SignUp($event)
-                                },
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.data,
-                                    "password",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            })
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", {}, [
-                        _vm._v(
-                          "\n              Already have an account?\n              "
-                        ),
-                        _c(
-                          "a",
-                          {
-                            staticClass:
-                              "text-center mx-auto text-warning mt-1",
-                            attrs: { type: "button" },
-                            on: {
-                              click: function($event) {
-                                _vm.isSignUp = !_vm.isSignUp
-                              }
+                  _c("div", { staticClass: "element-container" }, [
+                    _c("img", {
+                      staticClass: "img-fluid img-mobile",
+                      staticStyle: {
+                        width: "60%",
+                        display: "block",
+                        margin: "0 auto"
+                      },
+                      attrs: { src: "/images/mobile_connection.svg", alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "mx-auto text-center text-light lead" },
+                      [_vm._v("Welcome !")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "mx-auto text-center text-light lead" },
+                      [_vm._v("\n            We need your . . .\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group text-light mt-2" }, [
+                      _vm._v("\n            Full Name\n            "),
+                      _c("div", { staticClass: "d-flex align-items-center" }, [
+                        _c("li", {
+                          staticClass:
+                            "fas fa-user-circle position-absolute ml-2 text-light"
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.fullName,
+                              expression: "data.fullName"
                             }
+                          ],
+                          staticClass: "form-control text-light",
+                          staticStyle: { "padding-left": "30px" },
+                          attrs: {
+                            type: "text",
+                            placeholder: "Juan Dela Cruz"
                           },
-                          [_vm._v("Sign-In")]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row justify-content-center" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-info mt-4",
-                            attrs: { type: "button" },
-                            on: { click: _vm.SignUp }
-                          },
-                          [
-                            _c("i", { staticClass: "fas fa-user-plus" }),
-                            _vm._v(
-                              "\n                " +
-                                _vm._s(
-                                  _vm.isLoading ? "Signing Up..." : "Sign-Up"
+                          domProps: { value: _vm.data.fullName },
+                          on: {
+                            keydown: function($event) {
+                              if (
+                                !$event.type.indexOf("key") &&
+                                _vm._k(
+                                  $event.keyCode,
+                                  "enter",
+                                  13,
+                                  $event.key,
+                                  "Enter"
                                 )
-                            )
-                          ]
-                        )
+                              ) {
+                                return null
+                              }
+                              return _vm.SignUp($event)
+                            },
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.data,
+                                "fullName",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group text-light" }, [
+                      _vm._v("\n            Email Address\n            "),
+                      _c("div", { staticClass: "d-flex align-items-center" }, [
+                        _c("li", {
+                          staticClass:
+                            "fas fa-envelope position-absolute ml-2 text-light"
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.email,
+                              expression: "data.email"
+                            }
+                          ],
+                          staticClass: "form-control  text-light",
+                          staticStyle: { "padding-left": "30px" },
+                          attrs: {
+                            type: "email",
+                            id: "user_email",
+                            placeholder: "sampleemail@gmail.com",
+                            "aria-describedby": "Email Address"
+                          },
+                          domProps: { value: _vm.data.email },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.data, "email", $event.target.value)
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group  text-light" }, [
+                      _vm._v("\n            Password\n            "),
+                      _c("div", { staticClass: "d-flex align-items-center" }, [
+                        _c("i", {
+                          staticClass:
+                            "fas fa-key position-absolute ml-2 text-light"
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.password,
+                              expression: "data.password"
+                            }
+                          ],
+                          staticClass: "form-control  text-light",
+                          staticStyle: { "padding-left": "30px" },
+                          attrs: {
+                            type: "password",
+                            id: "user_password",
+                            placeholder: "******"
+                          },
+                          domProps: { value: _vm.data.password },
+                          on: {
+                            keydown: function($event) {
+                              if (
+                                !$event.type.indexOf("key") &&
+                                _vm._k(
+                                  $event.keyCode,
+                                  "enter",
+                                  13,
+                                  $event.key,
+                                  "Enter"
+                                )
+                              ) {
+                                return null
+                              }
+                              return _vm.SignUp($event)
+                            },
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.data,
+                                "password",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-info btn-block rounded-pill mt-4",
+                        attrs: { type: "button" },
+                        on: { click: _vm.SignUp }
+                      },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(
+                              _vm.isLoading ? "Signing Up..." : "Sign Up"
+                            ) +
+                            "\n           "
+                        )
+                      ]
+                    )
                   ])
                 ]
               )
@@ -845,7 +953,37 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h3",
+      {
+        staticClass: "mx-auto text-center pt-5 text-uppercase font-weight-bold",
+        staticStyle: { "letter-spacing": "0.4px", color: "rgb(43, 160, 230)" }
+      },
+      [
+        _vm._v("\n            Welcome to St. Mark Coptic "),
+        _c("br"),
+        _vm._v("\n            Orthodox Church, Philippines\n          ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "pt-3" }, [_c("small", [_vm._v("Email")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", {}, [_c("small", [_vm._v("Password")])])
+  }
+]
 render._withStripped = true
 
 
@@ -863,7 +1001,7 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Login_vue_vue_type_template_id_3b6adb30___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Login.vue?vue&type=template&id=3b6adb30& */ "./resources/js/pages/Login.vue?vue&type=template&id=3b6adb30&");
 /* harmony import */ var _Login_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.vue?vue&type=script&lang=js& */ "./resources/js/pages/Login.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login.vue?vue&type=style&index=0&lang=css& */ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Login.vue?vue&type=style&index=0&lang=scss& */ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -905,19 +1043,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&":
-/*!***********************************************************************!*\
-  !*** ./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css& ***!
-  \***********************************************************************/
+/***/ "./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************!*\
+  !*** ./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Login.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Login.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
