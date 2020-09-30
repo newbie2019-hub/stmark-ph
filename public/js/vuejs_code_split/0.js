@@ -240,6 +240,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
@@ -473,7 +509,7 @@ var render = function() {
           "a",
           {
             staticClass: "btn btn-sm btn-outline-light rounded-pill",
-            staticStyle: { "min-width": "75px", "margin-right": "10px" },
+            staticStyle: { "min-width": "75px", "margin-right": "7px" },
             attrs: { href: "#" },
             on: {
               click: function($event) {
@@ -738,7 +774,18 @@ var render = function() {
                           ]
                         )
                       ]
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass: "text-center text-light pt-4",
+                        staticStyle: { "font-weight": "300" }
+                      },
+                      [_vm._v("\n            Follow us on\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(3)
                   ])
                 ]
               )
@@ -769,7 +816,7 @@ var render = function() {
                     _c(
                       "p",
                       { staticClass: "mx-auto text-center text-light lead" },
-                      [_vm._v("Welcome !")]
+                      [_vm._v("Sign Up !")]
                     ),
                     _vm._v(" "),
                     _c(
@@ -850,7 +897,7 @@ var render = function() {
                               expression: "data.email"
                             }
                           ],
-                          staticClass: "form-control  text-light",
+                          staticClass: "form-control text-light",
                           staticStyle: { "padding-left": "30px" },
                           attrs: {
                             type: "email",
@@ -871,7 +918,7 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group  text-light" }, [
+                    _c("div", { staticClass: "form-group text-light" }, [
                       _vm._v("\n            Password\n            "),
                       _c("div", { staticClass: "d-flex align-items-center" }, [
                         _c("i", {
@@ -888,7 +935,7 @@ var render = function() {
                               expression: "data.password"
                             }
                           ],
-                          staticClass: "form-control  text-light",
+                          staticClass: "form-control text-light",
                           staticStyle: { "padding-left": "30px" },
                           attrs: {
                             type: "password",
@@ -936,14 +983,25 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n            " +
                             _vm._s(
                               _vm.isLoading ? "Signing Up..." : "Sign Up"
                             ) +
-                            "\n           "
+                            "\n          "
                         )
                       ]
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      {
+                        staticClass: "text-center text-light pt-4",
+                        staticStyle: { "font-weight": "300" }
+                      },
+                      [_vm._v("\n            Follow us on\n          ")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(4)
                   ])
                 ]
               )
@@ -982,6 +1040,60 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", {}, [_c("small", [_vm._v("Password")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center mt-2" }, [
+      _c(
+        "a",
+        {
+          staticClass: "text-light mr-3",
+          attrs: { href: "https://www.facebook.com/SMCOT/", target: "_blank" }
+        },
+        [_c("i", { staticClass: "fab fa-facebook-f fa-2x" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "text-light",
+          attrs: {
+            href: "https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA",
+            target: "_blank"
+          }
+        },
+        [_c("i", { staticClass: "fab fa-youtube fa-2x" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center mt-2" }, [
+      _c(
+        "a",
+        {
+          staticClass: "text-light mr-3",
+          attrs: { href: "https://www.facebook.com/SMCOT/", target: "_blank" }
+        },
+        [_c("i", { staticClass: "fab fa-facebook-f fa-2x" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "text-light",
+          attrs: {
+            href: "https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA",
+            target: "_blank"
+          }
+        },
+        [_c("i", { staticClass: "fab fa-youtube fa-2x" })]
+      )
+    ])
   }
 ]
 render._withStripped = true

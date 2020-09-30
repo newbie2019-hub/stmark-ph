@@ -12,8 +12,8 @@
           href="#"
           @click.prevent="isSignUp = !isSignUp"
           class="btn btn-sm btn-outline-light rounded-pill"
-          style="min-width: 75px; margin-right: 10px"
-          >{{isSignUp ? 'Login' : 'Sign Up' }}</a
+          style="min-width: 75px; margin-right: 7px"
+          >{{ isSignUp ? "Login" : "Sign Up" }}</a
         >
         <a
           href="/"
@@ -110,6 +110,22 @@
                 >
               </div>
             </form>
+            <p class="text-center text-light pt-4" style="font-weight: 300">
+              Follow us on
+            </p>
+            <div class="row justify-content-center mt-2">
+              <a
+                href="https://www.facebook.com/SMCOT/"
+                target="_blank"
+                class="text-light mr-3"
+                ><i class="fab fa-facebook-f fa-2x"></i></a>
+              <a
+                href="https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA"
+                target="_blank"
+                class="text-light"
+                ><i class="fab fa-youtube fa-2x"></i
+              ></a>
+            </div>
           </div>
         </div>
 
@@ -126,7 +142,7 @@
               class="img-fluid img-mobile"
               style="width: 60%; display: block; margin: 0 auto"
             />
-            <p class="mx-auto text-center text-light lead">Welcome !</p>
+            <p class="mx-auto text-center text-light lead">Sign Up !</p>
             <p class="mx-auto text-center text-light lead">
               We need your . . .
             </p>
@@ -155,7 +171,7 @@
                 <input
                   type="email"
                   v-model="data.email"
-                  class="form-control  text-light"
+                  class="form-control text-light"
                   id="user_email"
                   placeholder="sampleemail@gmail.com"
                   aria-describedby="Email Address"
@@ -163,14 +179,14 @@
                 />
               </div>
             </div>
-            <div class="form-group  text-light">
+            <div class="form-group text-light">
               Password
               <div class="d-flex align-items-center">
                 <i class="fas fa-key position-absolute ml-2 text-light"></i>
                 <input
                   type="password"
                   v-model="data.password"
-                  class="form-control  text-light"
+                  class="form-control text-light"
                   id="user_password"
                   placeholder="******"
                   style="padding-left: 30px"
@@ -178,9 +194,29 @@
                 />
               </div>
             </div>
-             <a type="button" @click="SignUp" class="btn btn-info btn-block rounded-pill mt-4">
-                {{ isLoading ? "Signing Up..." : "Sign Up" }}
-             </a>
+            <a
+              type="button"
+              @click="SignUp"
+              class="btn btn-info btn-block rounded-pill mt-4"
+            >
+              {{ isLoading ? "Signing Up..." : "Sign Up" }}
+            </a>
+            <p class="text-center text-light pt-4" style="font-weight: 300">
+              Follow us on
+            </p>
+            <div class="row justify-content-center mt-2">
+              <a
+                href="https://www.facebook.com/SMCOT/"
+                target="_blank"
+                class="text-light mr-3"
+                ><i class="fab fa-facebook-f fa-2x"></i></a>
+              <a
+                href="https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA"
+                target="_blank"
+                class="text-light"
+                ><i class="fab fa-youtube fa-2x"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
