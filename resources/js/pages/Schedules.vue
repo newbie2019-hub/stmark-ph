@@ -85,6 +85,11 @@
           class="row justify-content-center mt-4 mb-2"
           style="max-height: 1000px; overflow-y: auto"
         >
+        <!-- EMPTY STATUS --->
+        <div class="col-sm-8 col-md-8 col-lg-10" v-if="scheduleData.length == 0">
+          <p style="font-size: 1.2rem" class="mx-auto text-center">- No Schedules Added!</p>
+        </div>
+        <!--- CARDS FOR SCHEDULE --->
           <div
             class="col-sm-5 col-md-5 col-lg-5 mb-1"
             v-for="(sched, i) in scheduleData"
@@ -228,6 +233,7 @@ export default {
           this.scheduleData = array;
         }, 100);
         
+        console.log(this.scheduleData)
       }
     },
   },
