@@ -1,9 +1,9 @@
 <template>
   <div>
-    <section class="schedules">
+    <section class="resources">
       <div class="container d-flex h-100 justify-content-center align-items-center">
         <div class="row justify-content-center">
-          <div class="col-sm-10 col-md-7 col-lg-6">
+          <div class="col-sm-8 col-md-8 col-lg-10">
             <div class="text-lg-left">
               <div>
                 <h3 class="text-white" data-aos="fade-right" data-aos-duration="1200">
@@ -40,34 +40,10 @@
                 data-aos-duration="1100"
               >Updates &nbsp; <i class="fas fa-clipboard"></i></a>
             </div>
-          </div>
-
-          <div class="col-sm-10 col-md-5 col-lg-6">
-            <div class="pt-2" data-aos="fade-left" data-aos-duration="1200">
-              <h3 class="text-white text-uppercase">Current Schedule</h3>
-              <br />
-              <div v-for="(sched, i) in scheduleData" :key="i">
-                <h4
-                  class="text-white text-uppercase"
-                  v-if="isCurrentSchedule(sched.start)"
-                >&nbsp; - {{sched.title}}</h4>
-                <p
-                  class="text-white text-uppercase"
-                  v-if="isCurrentSchedule(sched.start)"
-                >&nbsp; &nbsp;START: &nbsp;{{sched.start | formatDate }}</p>
-                <p
-                  class="text-white text-uppercase"
-                  v-if="isCurrentSchedule(sched.start)"
-                >&nbsp; &nbsp;END: &nbsp;{{sched.end | formatDate }}</p>
-                <br />
-                <p
-                  class="text-white text-uppercase"
-                  v-if="scheduleData < 1"
-                >&nbsp; &nbsp; No Shedules for today</p>
-              </div>
-            </div>
+           
           </div>
         </div>
+         <div class="icon-scroll"></div>
       </div>
     </section>
 
