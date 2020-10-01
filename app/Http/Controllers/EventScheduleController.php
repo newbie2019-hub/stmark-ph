@@ -10,7 +10,8 @@ class EventScheduleController extends Controller
 {
     public function get(Request $request){
         
-        return EventSchedule::paginate($request->total);
+        return EventSchedule::get();
+        
         // return response()->json(EventSchedule::get());
     }
 

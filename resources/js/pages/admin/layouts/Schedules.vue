@@ -197,7 +197,7 @@ export default {
     async getSchedule() {
       const res = await this.callApi("get", `/getSchedule?`);
       if (res.status == 200 || res.status == 201) {
-        this.schedData = res.data.data;
+        this.schedData = res.data;
       }
     },
     validateField() {
