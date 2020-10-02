@@ -144,6 +144,7 @@ export default {
   },
   methods: {
     fileSelected: function (fileRecordsNewlySelected) {
+       this.fileRecordsForUpload = []
       var validFileRecords = fileRecordsNewlySelected.filter(
         (fileRecord) => !fileRecord.error
       );

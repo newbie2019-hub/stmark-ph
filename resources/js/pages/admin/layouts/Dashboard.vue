@@ -18,7 +18,7 @@
          <div class="card ">
             <div class="card-body ">
               <h5 class="card-title text-uppercase">Accounts</h5>
-              <h6 class="card-subtitle mb-2 ">Summary</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Summary</h6>
               <p class="card-text">
                 You currently have {{accountsCount}} account{{accountsCount > 1 ? 's' : ''}} registered in your website. Do you want to add some accounts?
               </p>
@@ -40,11 +40,11 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-10 col-md-6 col-lg-6">
-         <div class="card ">
-            <div class="card-body ">
+        <div class="col-sm-10 col-md-6 col-lg-6" >
+         <div class="card">
+            <div class="card-body">
               <h5 class="card-title text-uppercase">Account Info</h5>
-              <h6 class="card-subtitle mb-3">Summary</h6>
+              <h6 class="card-subtitle mb-3 text-muted">Summary</h6>
               <ul class="card-text" style="list-style-type: none">
                 <li>Name: {{getUserObj.name}}</li>
                 <li>Email: {{getUserObj.email}}</li>
