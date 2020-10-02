@@ -106,6 +106,7 @@
                   type="button"
                   @click="login"
                   class="btn btn-info rounded-pill btn-block mt-4"
+                  :disabled="isLoading"
                   >{{ isLoading ? "Logging in..." : "Login" }}</a
                 >
               </div>

@@ -65,6 +65,14 @@
           <div class="modal-body">
             <div class="row justify-content-center">
               <div class="col-md-8 col-lg-8">
+                Title
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  id="scheduleTitle"
+                  placeholder
+                  v-model="data.title"
+                />
                 Description
                 <textarea
                   class="form-control form-control-sm"
@@ -74,16 +82,17 @@
                 ></textarea>
                 Attachment file:
                 <VueFileAgent
-                  ref="vueFileAgent"
-                  :multiple="false"
+                  ref="vueFileResources"
+                  @select="fileSelected($event)"
                   :maxSize="'20MB'"
-                  :deletable="true"
+                  :multiple="false"
+                  :deletable="false"
                   :theme="'list'"
+                  :accept="'audio/*,image/*,video/*,.pdf,.doc,.docx,.ods,.xls'"
                   :errorText="{
+                    type: 'Error! File type is not allowed!',
                     size: 'This file is too large to be attached',
                   }"
-                  @select="fileSelected($event)"
-                  @delete="fileDeleted($event)"
                   v-model="data.file"
                 ></VueFileAgent>
               </div>
@@ -97,7 +106,14 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-sm btn-primary">Save</button>
+            <button
+              type="button"
+              @click="saveResource"
+              class="btn btn-sm btn-primary"
+              :disabled="isSaving"
+            >
+              {{ isSaving ? "Saving Resources" : "Save" }}
+            </button>
           </div>
         </div>
       </div>
@@ -118,11 +134,13 @@ export default {
   data() {
     return {
       resources: [],
+      token: "",
       data: {
         description: "",
+        title: "",
         file: "",
-        uploadHeaders: { "x-csrf-token": window.Laravel.csrfToken },
       },
+      isSaving: false,
       uploadUrl: "/storeFile",
       fileRecords: [],
       fileRecordsForUpload: [],
@@ -144,11 +162,37 @@ export default {
       this.fileRecordsForUpload = this.fileRecordsForUpload.concat(
         validFileRecords
       );
-      console.log(this.fileRecordsForUpload);
     },
-    fileDeleted: function (fileRecord) {
-      this.fileRecordsForUpload = [];
+    async saveResource() {
+      if (this.data.description.trim() == "")
+        return this.err("Description is required");
+      if (this.fileRecordsForUpload.length == 0)
+        return this.err("File is empty");
+
+      this.isSaving = true;
+
+      const resu = await this.$refs.vueFileResources.upload(
+        this.uploadUrl,
+        { "x-csrf-token": this.token, "X-Requested-With": "XMLHttpRequest" },
+        this.fileRecordsForUpload
+      );
+
+      this.data.file = resu[0].data;
+
+      const res = await this.callApi('post', '/store', this.data)
+      if(res.status == 200 || res.status == 201){
+        this.success('Resources saved successfuly')
+        this.isSaving = false
+        $('#addModal').modal('hide')
+      }
+      else{
+        this.swr();
+        this.isSaving = false
+      }
     },
+  },
+  async created() {
+    this.token = window.Laravel.csrfToken;
   },
   computed: {
     parameters() {

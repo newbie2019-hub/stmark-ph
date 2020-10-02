@@ -276,6 +276,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
@@ -760,7 +761,10 @@ var render = function() {
                               {
                                 staticClass:
                                   "btn btn-info rounded-pill btn-block mt-4",
-                                attrs: { type: "button" },
+                                attrs: {
+                                  type: "button",
+                                  disabled: _vm.isLoading
+                                },
                                 on: { click: _vm.login }
                               },
                               [

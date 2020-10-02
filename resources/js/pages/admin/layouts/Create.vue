@@ -76,6 +76,7 @@
               type="button"
               class="btn btn-sm btn-success"
               @click="SavePost"
+              :disabled='isCreating'
             >{{isCreating ? 'Saving content...' : 'Create Post'}}</button>
           </div>
         </div>
@@ -191,7 +192,7 @@ export default {
       this.isCreating = true;
 
       this.data.featuredImage = resu[0].data
-      const res = await this.callApi("post", "/createPost", this.data);
+      const res = await this.callApi('post', '/createPost', this.data);
       if (res.status == 200 || res.status == 201) {
         this.success("Post has been saved!");
         this.isCreating = false;

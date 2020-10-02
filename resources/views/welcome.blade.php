@@ -67,7 +67,7 @@
                             <h4>
                                 <span class="sub-header-primary text-warning">St. Mark the Apostle</span>
                             </h4>
-                            <p class="header-secondary text-dark">Mark the Evangelist is the traditionally ascribed
+                            <p class="header-secondary text-dark text-justify">Mark the Evangelist is the traditionally ascribed
                                 author of the Gospel of Mark. Mark is said to have founded the Church of Alexandria, one
                                 of the most important episcopal sees of early Christianity.</p>
                         </div>
@@ -102,7 +102,7 @@
                             <h4>
                                 <span class="sub-header-primary text-warning">Bible Study</span>
                             </h4>
-                            <p class="header-secondary text-dark">Saint Mark Bible study is hosted every Sunday at 11
+                            <p class="header-secondary text-dark text-justify">Saint Mark Bible study is hosted every Sunday at 11
                                 AM.Learning and Sharing with other members. Join Us Now!</p>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                             <h4>
                                 <span class="sub-header-primary text-warning">Sunday School</span>
                             </h4>
-                            <p class="header-secondary text-dark">Saint Mark offers sunday school for all grades from
+                            <p class="header-secondary text-dark text-justify">Saint Mark offers sunday school for all grades from
                                 Pre-K to college and grad. Have fun while Learning. Join Us Now!</p>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <h4 class>
                                 <span class="sub-header-primary text-warning">Liturgy</span>
                             </h4>
-                            <p class="header-secondary text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing
+                            <p class="header-secondary text-dark text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing
                                 elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <h4 class>
                                 <span class="sub-header-primary text-warning">Catechism</span>
                             </h4>
-                            <p class="header-secondary text-dark">The Orthodox Church has a long and rich history of
+                            <p class="header-secondary text-dark text-justify">The Orthodox Church has a long and rich history of
                                 theology and revelation. In the following pages we hope to help explain how the Eastern
                                 Orthodox Church understands the Church, God, and our place in relationship with them
                                 both.</p>

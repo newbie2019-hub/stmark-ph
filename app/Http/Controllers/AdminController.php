@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Announcement;
 use App\User;
 use App\tags;
+use App\Resources;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -116,6 +117,20 @@ class AdminController extends Controller
         $picName = time().'.'.$request->file->extension();
         $request->file->move(public_path('uploads'), $picName);
         return $picName;
+    }
+
+    public function storeFile(Request $request){
+        $filename = time().'.'.$request->file->extension();
+        $request->file->move(public_path('uploads/resources'), $filename);
+        return $filename;
+    }
+
+    public function store(Request $request){
+        return Resources::create([
+            'title' => $request->title,
+            'file' => $request->file,
+            'description' => $request->description
+        ]);
     }
 
     public function slug(){
