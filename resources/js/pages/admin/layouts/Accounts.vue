@@ -88,6 +88,17 @@
                     <option>User</option>
                   </select>
                 </div>
+                <div class="form-group">
+                  Status
+                  <select
+                    v-model="data.status"
+                    class="custom-select form-control-sm"
+                    id="status"
+                  >
+                    <option>Active</option>
+                    <option>Pending</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -131,7 +142,8 @@ export default {
         fullName: "",
         email: "",
         password: "",
-        role: "Please Select",
+        role: 'Please Select',
+        status: '',
       },
     };
   },
@@ -148,6 +160,8 @@ export default {
     async addUser() {
       if (this.status == "save") {
         this.isAdding = true;
+        validateFields();
+
         const res = await this.callApi("post", "/create_user", this.data);
         if (res.status == 200 || res.status == 201) {
           this.success("User has been added successfully!");
@@ -208,6 +222,7 @@ export default {
       if (this.data.password.trim() == "")
         return this.err("Password is required");
       if (this.data.role.trim() == "") return this.err("Role is required");
+      if (this.data.status.trim() == "") return this.err("Status is required");
     },
     async getUsers() {
       const count = 0;
@@ -278,6 +293,11 @@ export default {
           {
             title: "ROLE",
             key: "role",
+            orderable: true,
+          },
+          {
+            title: "STATUS",
+            key: "status",
             orderable: true,
           },
         ],

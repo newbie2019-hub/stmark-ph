@@ -18,11 +18,24 @@
     <nav aria-label="breadcrumb" class="pt-3 pl-1">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="/manage/resources">Home</a>
+          <a href="/manage">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Resources</li>
       </ol>
     </nav>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="resources.length == 0">
+      <strong>No resources yet!</strong> It appears that you don't have any resources for your website. 
+      You may add some resources now.
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
     <!-- TABLE -->
     <div class="row p-2">
@@ -162,7 +175,10 @@ export default {
       this.fileRecordsForUpload = this.fileRecordsForUpload.concat(
         validFileRecords
       );
+
+      console.log(this.fileRecordsForUpload)
     },
+
     async saveResource() {
       if (this.data.description.trim() == "")
         return this.err("Description is required");
@@ -190,9 +206,20 @@ export default {
         this.isSaving = false
       }
     },
+
+    async getResources(){
+      const res = await this.callApi('get','/getResources')
+      if(res.status == 200 || res.status == 201){
+        this.resources = res.data
+      }
+      else{
+        this.swr()
+      }
+    }
   },
   async created() {
     this.token = window.Laravel.csrfToken;
+    this.getResources()
   },
   computed: {
     parameters() {
@@ -212,6 +239,11 @@ export default {
           {
             title: "ID",
             key: "id",
+            orderable: true,
+          },
+          {
+            title: "TITLE",
+            key: "title",
             orderable: true,
           },
           {

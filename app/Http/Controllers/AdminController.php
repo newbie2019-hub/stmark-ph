@@ -125,6 +125,7 @@ class AdminController extends Controller
         return $filename;
     }
 
+    //RESOURCES
     public function store(Request $request){
         return Resources::create([
             'title' => $request->title,
@@ -132,18 +133,27 @@ class AdminController extends Controller
             'description' => $request->description
         ]);
     }
-
-    public function slug(){
-        $title = 'This is a nice title';
-        return Announcement::create([
-            'title' => $title,
-            'slug' => $title,
-            'description' => 'This is some description, This is some description, ',
-            'postexcerpt' => 'This is some description, This is some description, ',
-            'content' => 'This is some description, This is some description, This is some description, ',
-        ]);
-        return $title;
+    
+    public function getResources(){
+        return Resources::get();
     }
+
+    public function download($file_name){
+        $file_path = public_path('uploads/resources/'.$file_name);
+        return response()->download($file_path);
+    }
+
+    // public function slug(){
+    //     $title = 'This is a nice title';
+    //     return Announcement::create([
+    //         'title' => $title,
+    //         'slug' => $title,
+    //         'description' => 'This is some description, This is some description, ',
+    //         'postexcerpt' => 'This is some description, This is some description, ',
+    //         'content' => 'This is some description, This is some description, This is some description, ',
+    //     ]);
+    //     return $title;
+    // }
 
     public function deleteFImage(Request $request){
         $fileName = $request->imageName;
@@ -180,6 +190,7 @@ class AdminController extends Controller
                 'email' => 'bail|required|email|unique:users',
                 'password' => 'bail|required|min:6',
                 'role' => 'required',
+                'status' => 'required',
             ]);
             $password = bcrypt($request->password);
             return User::create([
@@ -187,6 +198,7 @@ class AdminController extends Controller
                 'email' => $request->email,
                 'password' => $password,
                 'role' => $request->role,
+                'status' => $request->status,
             ]);
     }
     public function signup(Request $request){
@@ -252,14 +264,14 @@ class AdminController extends Controller
         }
     }
     public function login(Request $request){
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 'Active'])) {
             $user = Auth::user();
             if($user->role === 'Admin'){
               return redirect('/manage');
             }
         } else {
             return response()->json([
-                'msg' => 'Incorrect login details',
+                'msg' => 'Incorrect credentials or your account status is still pending.',
             ], 401);
         }
     }

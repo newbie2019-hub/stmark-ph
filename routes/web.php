@@ -48,6 +48,7 @@ Route::middleware([AdminCheck::class])->group(function ()
     //RESOURCES
     Route::post('/storeFile', 'AdminController@storeFile');
     Route::post('/store', 'AdminController@store');
+    Route::get('/getResources', 'AdminController@getResources');
 });
 
 //SCHEDULE ROUTE

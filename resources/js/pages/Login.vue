@@ -170,14 +170,15 @@
                   class="fas fa-envelope position-absolute ml-2 text-light"
                 ></li>
                 <input
-                  type="email"
-                  v-model="data.email"
-                  class="form-control text-light"
-                  id="user_email"
-                  placeholder="sampleemail@gmail.com"
-                  aria-describedby="Email Address"
-                  style="padding-left: 30px"
-                />
+                    type="text"
+                    v-model="data.email"
+                    class="form-control text-light"
+                    placeholder="sample_email@gmail.com"
+                    aria-describedby="Email Address"
+                    style="padding-left: 35px"
+                    @keydown.enter="SignUp"
+                    required
+                  />
               </div>
             </div>
             <div class="form-group text-light">
@@ -187,6 +188,21 @@
                 <input
                   type="password"
                   v-model="data.password"
+                  class="form-control text-light"
+                  id="user_password"
+                  placeholder="******"
+                  style="padding-left: 30px"
+                  @keydown.enter="SignUp"
+                />
+              </div>
+            </div>
+            <div class="form-group text-light">
+              Verify Password
+              <div class="d-flex align-items-center">
+                <i class="fas fa-key position-absolute ml-2 text-light"></i>
+                <input
+                  type="password"
+                  v-model="data.verify_password"
                   class="form-control text-light"
                   id="user_password"
                   placeholder="******"
@@ -269,6 +285,7 @@ export default {
         fullName: "",
         email: "",
         password: "",
+        verify_password: '',
       },
       isValidated: false,
     };
@@ -277,6 +294,7 @@ export default {
   methods: {
     async login() {
       this.isValidated = true;
+      this.isLoading = true;
       if (this.data.email.trim() == "")
         return this.err("Email Address is required");
       if (this.data.password.trim() == "")
@@ -291,8 +309,9 @@ export default {
         this.data.email = "";
         this.data.password = "";
         this.isLoading = false;
-        return this.err("Email or Password is incorrect");
+        return this.err(res['data']['msg']);
       }
+      this.isLoading = false;
     },
     async SignUp() {
       if (this.data.fullName.trim() == "")
@@ -300,6 +319,8 @@ export default {
       if (this.data.email.trim() == "") return this.err("Email is required");
       if (this.data.password.trim() == "")
         return this.err("Password is required");
+      if(this.data.password != this.data.verify_password)
+        return this.err("Password do not match");  
 
       this.isAdding = true;
       const res = await this.callApi("post", "/sign-up", this.data);

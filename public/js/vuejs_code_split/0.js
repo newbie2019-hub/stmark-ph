@@ -277,6 +277,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user"],
   data: function data() {
@@ -286,7 +302,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       data: {
         fullName: "",
         email: "",
-        password: ""
+        password: "",
+        verify_password: ''
       },
       isValidated: false
     };
@@ -303,47 +320,51 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _this.isValidated = true;
+                _this.isLoading = true;
 
                 if (!(_this.data.email.trim() == "")) {
-                  _context.next = 3;
+                  _context.next = 4;
                   break;
                 }
 
                 return _context.abrupt("return", _this.err("Email Address is required"));
 
-              case 3:
+              case 4:
                 if (!(_this.data.password.trim() == "")) {
-                  _context.next = 5;
+                  _context.next = 6;
                   break;
                 }
 
                 return _context.abrupt("return", _this.err("Password is required"));
 
-              case 5:
+              case 6:
                 _this.isLoading = true;
-                _context.next = 8;
+                _context.next = 9;
                 return _this.callApi("POST", "/userlogin", _this.data);
 
-              case 8:
+              case 9:
                 res = _context.sent;
 
                 if (!(res.status == 200 || res.status == 201)) {
-                  _context.next = 14;
+                  _context.next = 15;
                   break;
                 }
 
                 _this.isLoading = false;
                 window.location = "/manage";
-                _context.next = 18;
+                _context.next = 19;
                 break;
 
-              case 14:
+              case 15:
                 _this.data.email = "";
                 _this.data.password = "";
                 _this.isLoading = false;
-                return _context.abrupt("return", _this.err("Email or Password is incorrect"));
+                return _context.abrupt("return", _this.err(res['data']['msg']));
 
-              case 18:
+              case 19:
+                _this.isLoading = false;
+
+              case 20:
               case "end":
                 return _context.stop();
             }
@@ -384,11 +405,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return", _this2.err("Password is required"));
 
               case 6:
+                if (!(_this2.data.password != _this2.data.verify_password)) {
+                  _context2.next = 8;
+                  break;
+                }
+
+                return _context2.abrupt("return", _this2.err("Password do not match"));
+
+              case 8:
                 _this2.isAdding = true;
-                _context2.next = 9;
+                _context2.next = 11;
                 return _this2.callApi("post", "/sign-up", _this2.data);
 
-              case 9:
+              case 11:
                 res = _context2.sent;
 
                 if (res.status == 200 || res.status == 201) {
@@ -412,7 +441,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 }
 
-              case 11:
+              case 13:
               case "end":
                 return _context2.stop();
             }
@@ -902,15 +931,30 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control text-light",
-                          staticStyle: { "padding-left": "30px" },
+                          staticStyle: { "padding-left": "35px" },
                           attrs: {
-                            type: "email",
-                            id: "user_email",
-                            placeholder: "sampleemail@gmail.com",
-                            "aria-describedby": "Email Address"
+                            type: "text",
+                            placeholder: "sample_email@gmail.com",
+                            "aria-describedby": "Email Address",
+                            required: ""
                           },
                           domProps: { value: _vm.data.email },
                           on: {
+                            keydown: function($event) {
+                              if (
+                                !$event.type.indexOf("key") &&
+                                _vm._k(
+                                  $event.keyCode,
+                                  "enter",
+                                  13,
+                                  $event.key,
+                                  "Enter"
+                                )
+                              ) {
+                                return null
+                              }
+                              return _vm.SignUp($event)
+                            },
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
@@ -970,6 +1014,62 @@ var render = function() {
                               _vm.$set(
                                 _vm.data,
                                 "password",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group text-light" }, [
+                      _vm._v("\n            Verify Password\n            "),
+                      _c("div", { staticClass: "d-flex align-items-center" }, [
+                        _c("i", {
+                          staticClass:
+                            "fas fa-key position-absolute ml-2 text-light"
+                        }),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.verify_password,
+                              expression: "data.verify_password"
+                            }
+                          ],
+                          staticClass: "form-control text-light",
+                          staticStyle: { "padding-left": "30px" },
+                          attrs: {
+                            type: "password",
+                            id: "user_password",
+                            placeholder: "******"
+                          },
+                          domProps: { value: _vm.data.verify_password },
+                          on: {
+                            keydown: function($event) {
+                              if (
+                                !$event.type.indexOf("key") &&
+                                _vm._k(
+                                  $event.keyCode,
+                                  "enter",
+                                  13,
+                                  $event.key,
+                                  "Enter"
+                                )
+                              ) {
+                                return null
+                              }
+                              return _vm.SignUp($event)
+                            },
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.data,
+                                "verify_password",
                                 $event.target.value
                               )
                             }

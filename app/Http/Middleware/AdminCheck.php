@@ -19,6 +19,9 @@ class AdminCheck
             return redirect('/');
         }
         $user = Auth::user();
+        if($user->status == "Pending"){
+            return redirect('/');
+        }
         if($user->role == "User"){
             return redirect('/');
         }
