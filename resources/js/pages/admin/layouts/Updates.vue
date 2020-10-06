@@ -22,7 +22,7 @@
       </ol>
     </nav>
 
-    <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="postContent.length == 0">
+    <div class="alert alert-warning alert-dismissible fade show ml-2 mr-2" role="alert" v-if="postContent.length == 0">
       <strong>No post yet!</strong> It appears that you don't have any post yet for your website. 
       You may add a post now.
       <button

@@ -46,9 +46,10 @@ Route::middleware([AdminCheck::class])->group(function ()
     Route::delete('/deleteSchedule', 'EventScheduleController@delete');
 
     //RESOURCES
-    Route::post('/storeFile', 'AdminController@storeFile');
     Route::post('/store', 'AdminController@store');
+    Route::put('/updateResources', 'AdminController@updateResources');
     Route::get('/getResources', 'AdminController@getResources');
+    Route::delete('/deleteResources', 'AdminController@deleteResources');
 });
 
 //SCHEDULE ROUTE

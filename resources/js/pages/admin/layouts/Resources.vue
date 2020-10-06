@@ -23,9 +23,15 @@
         <li class="breadcrumb-item active" aria-current="page">Resources</li>
       </ol>
     </nav>
+    <div class="alert alert-info ml-2 mr-2" role="alert">
+      <h4 class="alert-heading">Good Day, Admin!</h4>
+      <p>Directly uploading your resources to this site isn't allowed because this may get bigger and bigger and hosting will cost more.</p>
+      <hr>
+      <p class="mb-0">You can have it uploaded on <a href="https://www.mediafire.com" target="_blank">Mediafire</a>, <a href="https://www.drive.google.com" target="_blank">Google Drive</a>, <a href="https://ufile.io" target="_blank">Upload File.io</a> or any other platforms then add the link to it. Thank you!</p>
+    </div>
 
-    <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="resources.length == 0">
-      <strong>No resources yet!</strong> It appears that you don't have any resources for your website. 
+    <div class="alert alert-warning alert-dismissible fade show ml-2 mr-2" role="alert" v-if="resources.length == 0">
+      <strong>No resources!</strong> It appears that you don't have any resources for your website. 
       You may add some resources now.
       <button
         type="button"
@@ -51,8 +57,7 @@
       </div>
     </div>
 
-    <!-- ADD MODAL --->
-    <!-- Modal -->
+    <!-- MODAL --->
     <div
       class="modal fade"
       id="addModal"
@@ -65,11 +70,11 @@
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Add Resources</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">{{isEditing ? 'Edit Resource' : 'Add Resource'}}</h5>
             <button
               type="button"
               class="close"
-              data-dismiss="modal"
+              @click.prevent="cancelEdit"
               aria-label="Close"
             >
               <span aria-hidden="true">&times;</span>
@@ -81,14 +86,14 @@
                 Title
                 <input
                   type="text"
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm mb-1"
                   id="scheduleTitle"
                   placeholder
                   v-model="data.title"
                 />
                 Description
                 <textarea
-                  class="form-control form-control-sm"
+                  class="form-control form-control-sm mb-1"
                   id="description"
                   rows="3"
                   v-model="data.description"
@@ -110,7 +115,7 @@
             <button
               type="button"
               class="btn btn-sm btn-secondary"
-              data-dismiss="modal"
+              @click.prevent="cancelEdit"
             >
               Close
             </button>
@@ -120,12 +125,13 @@
               class="btn btn-sm btn-primary"
               :disabled="isSaving"
             >
-              {{ isSaving ? "Saving Resources" : "Save" }}
+              {{ isSaving ? 'Loading ...' : isEditing ? 'Update' : 'Save' }}
             </button>
           </div>
         </div>
       </div>
     </div>
+     <deleteModal></deleteModal>
   </div>
 </template>
 <style lang="scss">
@@ -135,6 +141,7 @@
 import { VueEditor, Quill } from "vue2-editor";
 import ImageResize from "quill-image-resize-vue";
 import { ImageDrop } from "quill-image-drop-module";
+import deleteModal from "../../../components/DeleteModal";
 
 export default {
   components: { VueEditor },
@@ -143,6 +150,7 @@ export default {
       resources: [],
       token: "",
       data: {
+        id: "",
         title: "",
         description: "",
         content: "",
@@ -178,14 +186,21 @@ export default {
         [{ color: [] }, { background: [] }, "image"],
         ["link"],
       ],
+      isEditing: false,
     };
   },
-  components: {},
+  components: {
+    deleteModal
+  },
   methods: {
     handleAction(actionName, data) {
       switch (actionName) {
+        case "edit":
+          this.editResources(data);
+          break;
         case "delete":
           this.showDeletingModal(data);
+          break;
       }
     },
     handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
@@ -206,25 +221,58 @@ export default {
           console.log(err);
         });
     },
+
     async saveResource() {
-      if (this.data.description.trim() == "")
-        return this.err("Description is required");
-      if (this.data.title.trim() == "")
-        return this.err("Title is required");
-      if (this.data.content.trim() == "")
-        return this.err("Content is required");
+      if(this.isEditing){
+        if (this.data.description.trim() == "")
+          return this.err("Description is required");
+        if (this.data.title.trim() == "")
+          return this.err("Title is required");
+        if (this.data.content.trim() == "")
+          return this.err("Content is required");
 
-      this.isSaving = true;
+        this.isSaving = true;
 
-      const res = await this.callApi('post', '/store', this.data)
-      if(res.status == 200 || res.status == 201){
-        this.success('Resources saved successfuly')
-        this.isSaving = false
-        $('#addModal').modal('hide')
+        const res = await this.callApi('put', '/updateResources', this.data)
+        if(res.status == 200 || res.status == 201){
+           $('#addModal').modal('hide')
+            const data = {
+              title: "",
+              description: "",
+              content: "",
+            }
+            this.isSaving = false
+            this.data = data
+            return this.success('Resources updated successfuly!')
+            this.getResources()
+        }
+        else
+        {
+          this.swr()
+        }
       }
-      else{
-        this.swr();
-        this.isSaving = false
+      else
+      {
+        if (this.data.description.trim() == "")
+          return this.err("Description is required");
+        if (this.data.title.trim() == "")
+          return this.err("Title is required");
+        if (this.data.content.trim() == "")
+          return this.err("Content is required");
+
+        this.isSaving = true;
+
+        const res = await this.callApi('post', '/store', this.data)
+        if(res.status == 200 || res.status == 201){
+          this.success('Resources saved successfuly')
+          this.isSaving = false
+          $('#addModal').modal('hide')
+          this.getResources()
+        }
+        else{
+          this.swr();
+          this.isSaving = false
+        }
       }
     },
 
@@ -236,6 +284,47 @@ export default {
       else{
         this.swr()
       }
+    },
+
+    async editResources(data){
+      this.isEditing = true
+      const res = {
+        id: data.id,
+        title: data.title,
+        description: data.description,
+        content: data.content
+      }
+
+      this.data = res
+      $('#addModal').modal('show')
+    },
+
+    showDeletingModal(data) {
+
+      const resource_id = data.id;
+      const deleteModalObj = {
+        showDeleteModal: true,
+        method: "delete",
+        deleteUrl: `/deleteResources?id=${resource_id}`,
+        isDeleted: false,
+        msg: "Are you sure you want to delete this resources?",
+        successMsg: "Resources was deleted succcessfuly!",
+      };
+
+      this.$store.commit("setDeletingModalObj", deleteModalObj);
+      $("#deleteModal").modal("show");
+    },
+
+    cancelEdit(){
+      this.isEditing = false
+      $('#addModal').modal('hide');
+      const data = {
+        title: "",
+        description: "",
+        content: "",
+      }
+
+      this.data = data
     }
   },
   async created() {
@@ -251,7 +340,7 @@ export default {
         perPageSizes: [5, 10, 15, 20],
         defaultPerPage: 5,
         tableClass: "table table-hover",
-        actions: ["delete"],
+        actions: ["edit","delete"],
         text: {
           searchText: "Search: ",
         },
@@ -279,6 +368,14 @@ export default {
           },
         ],
       };
+    },
+  },
+  watch: {
+    getDeleteModalObj(obj) {
+      if (obj.isDeleted) {
+        this.getResources();
+      }
+      $("#deleteModal").modal("hide");
     },
   },
 };

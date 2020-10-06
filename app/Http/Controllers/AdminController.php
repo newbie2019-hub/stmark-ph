@@ -9,7 +9,6 @@ use App\tags;
 use App\Resources;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -119,12 +118,6 @@ class AdminController extends Controller
         return $picName;
     }
 
-    public function storeFile(Request $request){
-        $filename = time().'.'.$request->file->extension();
-        $request->file->move(public_path('uploads/resources'), $filename);
-        return $filename;
-    }
-
     //RESOURCES
     public function store(Request $request){
         return Resources::create([
@@ -138,35 +131,40 @@ class AdminController extends Controller
         return Resources::get();
     }
 
-    public function download($file_name){
-        $file_path = public_path('uploads/resources/'.$file_name);
-        return response()->download($file_path);
-    }
-
-    // public function slug(){
-    //     $title = 'This is a nice title';
-    //     return Announcement::create([
-    //         'title' => $title,
-    //         'slug' => $title,
-    //         'description' => 'This is some description, This is some description, ',
-    //         'postexcerpt' => 'This is some description, This is some description, ',
-    //         'content' => 'This is some description, This is some description, This is some description, ',
-    //     ]);
-    //     return $title;
-    // }
-
+    public function deleteResources(Request $request){
+        return Resources::where('id', $request->id)->delete();       
+   }
+   
     public function deleteFImage(Request $request){
         $fileName = $request->imageName;
         $this->deleteFileFromServer($fileName);
     }
 
-    public function deleteFileFromServer($filename){
-        $filePath = public_path().'/uploads/'.$filename;
-        if(file_exists($filePath)){
-            @unlink($filePath);
-        }
-        return;
+    public function updateResources(Request $request){
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'content' => 'required',
+        ]);
+
+        $data = [
+            'id' => $request->id,
+            'title' => $request->title,
+            'description' => $request->description,
+            'content' => $request->content,
+        ];
+        
+        return Resources::where('id', $request->id)->update($data);
+
     }
+
+    // public function deleteFileFromServer($filename){
+    //     $filePath = public_path().'/uploads/'.$filename;
+    //     if(file_exists($filePath)){
+    //         @unlink($filePath);
+    //     }
+    //     return;
+    // }
 
     //DASHBOARD
     function countPost(){
