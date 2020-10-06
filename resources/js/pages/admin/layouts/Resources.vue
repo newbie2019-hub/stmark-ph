@@ -62,7 +62,7 @@
       aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Add Resources</h5>
@@ -77,7 +77,7 @@
           </div>
           <div class="modal-body">
             <div class="row justify-content-center">
-              <div class="col-md-8 col-lg-8">
+              <div class="col-md-10 col-lg-10">
                 Title
                 <input
                   type="text"
@@ -93,21 +93,16 @@
                   rows="3"
                   v-model="data.description"
                 ></textarea>
-                Attachment file:
-                <VueFileAgent
-                  ref="vueFileResources"
-                  @select="fileSelected($event)"
-                  :maxSize="'20MB'"
-                  :multiple="false"
-                  :deletable="false"
-                  :theme="'list'"
-                  :accept="'audio/*,image/*,video/*,.pdf,.doc,.docx,.ods,.xls'"
-                  :errorText="{
-                    type: 'Error! File type is not allowed!',
-                    size: 'This file is too large to be attached',
-                  }"
-                  v-model="data.file"
-                ></VueFileAgent>
+                Content
+                <vue-editor
+                  id="editor"
+                  :customModules="customModulesForEditor"
+                  :editorOptions="editorSettings"
+                  :editorToolbar="customToolbar"
+                  useCustomImageHandler
+                  @image-added="handleImageAdded"
+                  v-model="data.content"
+                />
               </div>
             </div>
           </div>
@@ -134,29 +129,55 @@
   </div>
 </template>
 <style lang="scss">
-.vue-file-agent.file-input-wrapper {
-  position: relative;
-  border: 0px !important;
-  text-align: center;
-  -webkit-transition: all 0.6s;
-  transition: all 0.6s;
-}
+
 </style>
 <script>
+import { VueEditor, Quill } from "vue2-editor";
+import ImageResize from "quill-image-resize-vue";
+import { ImageDrop } from "quill-image-drop-module";
+
 export default {
+  components: { VueEditor },
   data() {
     return {
       resources: [],
       token: "",
       data: {
-        description: "",
         title: "",
-        file: "",
+        description: "",
+        content: "",
       },
       isSaving: false,
       uploadUrl: "/storeFile",
       fileRecords: [],
       fileRecordsForUpload: [],
+      customModulesForEditor: [
+        { alias: "imageDrop", module: ImageDrop },
+        { alias: "imageResize", module: ImageResize },
+      ],
+      editorSettings: {
+        modules: {
+          imageDrop: true,
+          imageResize: {},
+        },
+      },
+      customToolbar: [
+        [{ font: [] }],
+        [{ header: [false, 1, 2, 3, 4, 5, 6] }],
+        ["bold", "italic", "underline", "strike"],
+        [
+          { align: "" },
+          { align: "center" },
+          { align: "right" },
+          { align: "justify" },
+        ],
+        ["blockquote", "code-block"],
+        [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
+        [{ script: "sub" }, { script: "super" }],
+        [{ indent: "-1" }, { indent: "+1" }],
+        [{ color: [] }, { background: [] }, "image"],
+        ["link"],
+      ],
     };
   },
   components: {},
@@ -167,33 +188,33 @@ export default {
           this.showDeletingModal(data);
       }
     },
-    fileSelected: function (fileRecordsSelected) {
-      this.fileRecordsForUpload = [];
-      var validFileRecords = fileRecordsSelected.filter(
-        (fileRecord) => !fileRecord.error
-      );
-      this.fileRecordsForUpload = this.fileRecordsForUpload.concat(
-        validFileRecords
-      );
+    handleImageAdded: function (file, Editor, cursorLocation, resetUploader) {
+      var formData = new FormData();
+      formData.append("image", file);
 
-      console.log(this.fileRecordsForUpload)
+      axios({
+        url: "/img_upload",
+        method: "POST",
+        data: formData,
+      })
+        .then((result) => {
+          let url = result.data.url; // Get url from response
+          Editor.insertEmbed(cursorLocation, "image", url);
+          resetUploader();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
-
     async saveResource() {
       if (this.data.description.trim() == "")
         return this.err("Description is required");
-      if (this.fileRecordsForUpload.length == 0)
-        return this.err("File is empty");
+      if (this.data.title.trim() == "")
+        return this.err("Title is required");
+      if (this.data.content.trim() == "")
+        return this.err("Content is required");
 
       this.isSaving = true;
-
-      const resu = await this.$refs.vueFileResources.upload(
-        this.uploadUrl,
-        { "x-csrf-token": this.token, "X-Requested-With": "XMLHttpRequest" },
-        this.fileRecordsForUpload
-      );
-
-      this.data.file = resu[0].data;
 
       const res = await this.callApi('post', '/store', this.data)
       if(res.status == 200 || res.status == 201){
@@ -247,14 +268,14 @@ export default {
             orderable: true,
           },
           {
-            title: "FILE",
-            key: "file",
-            orderable: true,
-          },
-          {
             title: "DESCRIPTION",
             key: "description",
-            sortable: false,
+            orderable: false,
+          },
+          {
+            title: "CREATED AT",
+            key: "created_at",
+            orderable: true,
           },
         ],
       };

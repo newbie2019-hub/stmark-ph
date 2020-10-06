@@ -129,8 +129,8 @@ class AdminController extends Controller
     public function store(Request $request){
         return Resources::create([
             'title' => $request->title,
-            'file' => $request->file,
-            'description' => $request->description
+            'description' => $request->description,
+            'content' => $request->content
         ]);
     }
     

@@ -84,7 +84,7 @@
     </div>
   </div>
 </template>
-<style>
+<style scoped>
 .ql-editor {
   min-height: 450px !important;
 }
