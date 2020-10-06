@@ -421,14 +421,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 res = _context2.sent;
 
                 if (res.status == 200 || res.status == 201) {
-                  _this2.success("User has been added successfully!");
-
                   _this2.addingUser = false;
                   _this2.isAdding = false;
                   _this2.data.fullName = "";
                   _this2.data.email = "";
                   _this2.data.password = "";
-                  window.location = "/manage";
+                  _this2.data.verify_password = "";
+
+                  _this2.success(res.data.msg);
+
+                  _this2.$router.push('/');
                 } else {
                   if (res.status == 422) {
                     for (i in res.data.errors) {

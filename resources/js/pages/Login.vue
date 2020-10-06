@@ -325,15 +325,20 @@ export default {
       this.isAdding = true;
       const res = await this.callApi("post", "/sign-up", this.data);
       if (res.status == 200 || res.status == 201) {
-        this.success("User has been added successfully!");
-        this.addingUser = false;
-        this.isAdding = false;
-        this.data.fullName = "";
-        this.data.email = "";
-        this.data.password = "";
-        window.location = "/manage";
+
+        this.addingUser = false
+        this.isAdding = false
+        this.data.fullName = ""
+        this.data.email = ""
+        this.data.password = ""
+        this.data.verify_password = ""
+
+        this.success(res.data.msg)
+        this.$router.push('/')
       } else {
+        
         if (res.status == 422) {
+          
           for (let i in res.data.errors) {
             this.err(res.data.errors[i][0]);
             this.isAdding = false;

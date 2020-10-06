@@ -160,7 +160,7 @@ export default {
     async addUser() {
       if (this.status == "save") {
         this.isAdding = true;
-        validateFields();
+        this.validateFields();
 
         const res = await this.callApi("post", "/create_user", this.data);
         if (res.status == 200 || res.status == 201) {

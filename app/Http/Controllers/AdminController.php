@@ -153,7 +153,7 @@ class AdminController extends Controller
             'description' => $request->description,
             'content' => $request->content,
         ];
-        
+
         return Resources::where('id', $request->id)->update($data);
 
     }
@@ -215,8 +215,9 @@ class AdminController extends Controller
             ]);
 
             //LOG-IN USER
-            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-            Auth::user();
+            return response()->json([
+                'msg' => 'Your account is still pending. Wait for the approval of the admin for your account'
+            ]);
          
     }
 
