@@ -87,7 +87,7 @@
         >
         <!-- EMPTY STATUS --->
         <div class="col-sm-8 col-md-8 col-lg-10" v-if="scheduleData.length == 0">
-          <p style="font-size: 1.2rem" class="mx-auto text-center">- No Schedules Added!</p>
+          <p style="font-size: 1.2rem" class="mx-auto text-center">No Schedules Added!</p>
         </div>
         <!--- CARDS FOR SCHEDULE --->
           <div

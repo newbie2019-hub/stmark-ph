@@ -230,16 +230,20 @@ class AdminController extends Controller
             'fullName' => 'required',
             'email' => 'bail|required|email',
         ]);
+
         $data = [
             'name' => $request->fullName,
             'email' => $request->email,
             'role' => $request->role,
+            'status' => $request->status
         ];
+
         if($request->password){
             $password = bcrypt($request->password);
             $data['password'] = $password;
         }
-        User::where('id', $request->id)->update($data);
+
+        return User::where('id', $request->id)->update($data);
     }
 
     public function deleteUser(Request $request){

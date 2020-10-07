@@ -191,22 +191,31 @@ export default {
 
         this.isUpdating = true;
         const res = await this.callApi("put", "/updateUserAcc", this.data);
-        if (res.status == 200 || res.status == 201) {
+        if (res.status == 200 || res.status == 201) 
+        {
+
           this.isUpdating = false;
           this.editUser = false;
-          this.success("User credentials was updated!");
-          this.getUsers();
           this.data.fullName = "";
           this.data.email = "";
           this.data.password = "";
           this.data.role = "";
-        } else {
-          if (res.status == 422) {
+
+          this.success("User credentials was updated!");
+          this.getUsers();
+
+        } 
+        else 
+        {
+          if (res.status == 422) 
+          {
             for (let i in res.data.errors) {
               this.err(res.data.errors[i][0]);
               this.isUpdating = false;
             }
-          } else {
+          } 
+          else 
+          {
             this.swr();
           }
           this.status = "save";
@@ -242,11 +251,11 @@ export default {
     },
 
     showDeletingModal(account) {
-      const post_id = account.id;
+      const acc_id = account.id;
       const deleteModalObj = {
         showDeleteModal: true,
         method: "delete",
-        deleteUrl: `/deleteUserAcc?userID=${post_id}`,
+        deleteUrl: `/deleteUserAcc?userID=${acc_id}`,
         isDeleted: false,
         msg: "Are you sure you want to delete this account?",
         successMsg: "Account deleted succcessfuly",
