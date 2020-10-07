@@ -12,9 +12,9 @@
       </div>
     </section>
     <section class="update-section">
-      <div class="container-fluid">
-          <div class="row justify-content-center align-items-center" v-if="hasContent" style="min-height: 500px">
-            <div class="col-md-12 col-lg-8 mt-2">
+      <div class="container" style="min-height: 500px">
+          <div class="row justify-content-center  mt-5" v-if="hasContent" style="min-height: 500px">
+            <div class="col-9 col-sm-9 col-md-10 col-lg-8">
               <h3
                 class="text-uppercase mb-3"
                 data-aos="fade-up"
@@ -70,9 +70,8 @@
               </div>
             </div>
             <div class="col-md-8 col-lg-4">
-              <div class="row justify-content-center">
-                <h3 class="text-uppercase mb-3" data-aos="fade-up" data-aos-duration="1400">
-                  <span class="header-secondary text-center text-secondary font-weight-bold">POPULAR POST</span>
+                <h3 class="text-uppercase mb-3 text-center mx-auto" data-aos="fade-up" data-aos-duration="1400">
+                  <span class="header-secondary  text-secondary font-weight-bold ">POPULAR POST</span>
                 </h3>
                 <div v-for="(content, i) in popularPost" :key="i">
                   <a v-bind:href="'/blog/' + content.slug">
@@ -93,7 +92,6 @@
                     </div>
                   </a>
                 </div>
-              </div>
             </div>
           </div>
           <div class="row justify-content-center align-items-center" v-if="!hasContent">

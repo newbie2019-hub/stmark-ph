@@ -157,14 +157,15 @@ class AdminController extends Controller
         return Resources::where('id', $request->id)->update($data);
 
     }
-
-    // public function deleteFileFromServer($filename){
-    //     $filePath = public_path().'/uploads/'.$filename;
-    //     if(file_exists($filePath)){
-    //         @unlink($filePath);
-    //     }
-    //     return;
-    // }
+    
+    //USED WITH DELETING POST
+    public function deleteFileFromServer($filename){
+        $filePath = public_path().'/uploads/'.$filename;
+        if(file_exists($filePath)){
+            @unlink($filePath);
+        }
+        return;
+    }
 
     //DASHBOARD
     function countPost(){
