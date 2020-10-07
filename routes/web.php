@@ -54,6 +54,7 @@ Route::middleware([AdminCheck::class])->group(function ()
 
 //SCHEDULE ROUTE
 Route::get('/getSchedule', 'EventScheduleController@get');
+
 //ADMIN PANEL
 Route::get('/manage/{slug}', 'AdminController@index');
 Route::get('/manage/resources/{slug}', function () {
@@ -77,9 +78,7 @@ Route::get('/getPopularPost', 'HomeController@getMostViewed');
 Route::get('/updates', function () {
     return view('update');
 });
-Route::get('/resource', function () {
-    return view('resources');
-});
+Route::get('/resource', 'ResourceController@index');
 Route::any('{slug}', function(){
     return view('welcome');
 });

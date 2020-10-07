@@ -163,14 +163,17 @@ export default {
         this.validateFields();
 
         const res = await this.callApi("post", "/create_user", this.data);
-        if (res.status == 200 || res.status == 201) {
-          this.success("User has been added successfully!");
+        if (res.status == 200 || res.status == 201) 
+        {
+          
           this.addingUser = false;
           this.isAdding = false;
           this.data.fullName = "";
           this.data.email = "";
           this.data.password = "";
           this.data.role = "";
+          
+          this.success("User has been added successfully!");
           $("#accountModal").modal("hide");
           this.getUsers();
         } else {

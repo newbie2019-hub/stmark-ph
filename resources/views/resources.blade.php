@@ -23,8 +23,10 @@
               <!--<h3><span class="scroll-text">Scroll Down</span></h3>-->
             </div>
           </section>
-          <section id="recontent" class="resourcecontent">
-              
+          <section id="recontent" class="">
+            <div id="app">
+              <resources :resources='@json($res)'></resources>
+            </div>
           </section>
           @include('partials.location')
           @include('partials.donate')
@@ -32,6 +34,7 @@
       </body>
       <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
       <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+      <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
       <script>
           AOS.init();
       </script>

@@ -25,7 +25,7 @@
     </nav>
     <div class="alert alert-info ml-2 mr-2" role="alert">
       <h4 class="alert-heading">Good Day, Admin!</h4>
-      <p>Directly uploading your resources to this site isn't allowed because this may get bigger and bigger and hosting will cost more.</p>
+      <p>Directly uploading your resources to this site isn't allowed because this may cause your site to load slower.</p>
       <hr>
       <p class="mb-0">You can have it uploaded on <a href="https://www.mediafire.com" target="_blank">Mediafire</a>, <a href="https://www.drive.google.com" target="_blank">Google Drive</a>, <a href="https://ufile.io" target="_blank">Upload File.io</a> or any other platforms then add the link to it. Thank you!</p>
     </div>

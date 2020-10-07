@@ -39,13 +39,14 @@ import 'vue-file-agent/dist/vue-file-agent.css';
 Vue.use(VueFileAgent);
 
 //LOAD VUE COMPONENTS
-Vue.component('updates', require('./pages/Updates.vue').default)
-Vue.component('schedules', require('./pages/Schedules.vue').default)
-Vue.component('blog', require('./pages/Blog.vue').default)
+Vue.component('updates', () => import('./pages/Updates.vue'))
+Vue.component('schedules', () => import('./pages/Schedules.vue'))
 Vue.component('log-in', () => import('./pages/Login.vue'))
+Vue.component('resources', () => import('./pages/Resources.vue'))
+Vue.component('blog', () => import('./pages/Blog.vue'))
 
 //ADMIN
-Vue.component('admin-main', require('./pages/admin/Admin.vue').default)
+Vue.component('admin-main', () =>import('./pages/admin/Admin.vue'))
 
 //VUE FILTER
 import moment from 'moment'
