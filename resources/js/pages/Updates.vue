@@ -1,9 +1,7 @@
 <template>
   <div>
     <section id="resources" class="updatesection">
-      <div
-        class="container d-flex h-100 justify-content-center align-items-center"
-      >
+      <div class="container d-flex h-100 justify-content-center align-items-center">
         <div class="mx-auto text-center">
           <h1 data-aos="fade-right" data-aos-duration="1400">
             <span class="header-primary">UPDATES</span>
@@ -15,12 +13,7 @@
     </section>
     <section class="update-section">
       <div class="container-fluid">
-        <div class="container pt-5">
-          <div
-            class="row justify-content-center"
-            v-if="hasContent"
-            style="min-height: 500px"
-          >
+          <div class="row justify-content-center align-items-center" v-if="hasContent" style="min-height: 500px">
             <div class="col-md-12 col-lg-8 mt-2">
               <h3
                 class="text-uppercase mb-3"
@@ -48,11 +41,7 @@
                   <div class="col-md-6">
                     <div class="card-body">
                       <h5 class="card-title">
-                        <a
-                          class="text-dark"
-                          v-bind:href="/blog/ + content.slug"
-                          >{{ content.title }}</a
-                        >
+                        <a class="text-dark" v-bind:href="/blog/ + content.slug" >{{ content.title }}</a>
                         <br />
                         <small class="text-muted update-date">
                           <!-- <Icon type="ios-clock-outline" /> -->
@@ -82,15 +71,8 @@
             </div>
             <div class="col-md-8 col-lg-4">
               <div class="row justify-content-center">
-                <h3
-                  class="text-uppercase mb-3"
-                  data-aos="fade-up"
-                  data-aos-duration="1400"
-                >
-                  <span
-                    class="header-secondary text-center text-secondary font-weight-bold"
-                    >POPULAR POST</span
-                  >
+                <h3 class="text-uppercase mb-3" data-aos="fade-up" data-aos-duration="1400">
+                  <span class="header-secondary text-center text-secondary font-weight-bold">POPULAR POST</span>
                 </h3>
                 <div v-for="(content, i) in popularPost" :key="i">
                   <a v-bind:href="'/blog/' + content.slug">
@@ -114,47 +96,18 @@
               </div>
             </div>
           </div>
-          <div
-            class="container"
-            v-if="!hasContent"
-            
-          >
-            <div class="row h-100 justify-content-center align-items-center pb-3">
-
-                <div class="col-md-6 col-lg-6">
-                  <img
-                    v-bind:src="'/images/empty_post.svg'"
-                    style="display: block; margin: 0 auto; width: 60%"
-                  />
-                </div>
-
-              <div class="col-md-4 col-lg-4">
-                <div class="text-center text-lg-left mt-5">
-                  <h4>
-                    <span class="sub-header-primary text-warning"
-                      >No Updates Found</span
-                    >
-                  </h4>
-                  <p class="header-secondary text-dark">
-                    Sorry, There are no updates. Please stay tuned!
-                  </p>
-                </div>
+          <div class="row justify-content-center align-items-center" v-if="!hasContent">
+              <div class="col-10 col-sm-9 col-md-9 col-lg-9 mt-5">
+                <img v-bind:src="'/images/empty_post.svg'" style="display: block; margin: 0 auto; width: 75%; cursor: pointer"/>
+                <h4 class="mx-auto text-center text-info mt-5 mb-3">It appears that there are no updates for St. Mark Coptic Orthodox Church Philippines. You may check this section later. </h4>
               </div>
-            </div>
           </div>
-        </div>
       </div>
     </section>
   </div>
 </template>
-<style lang="scss">
-.element-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-}
+<style lang="scss" scoped>
+
 </style>
 <script>
 import gotop from "../components/Gotop";
