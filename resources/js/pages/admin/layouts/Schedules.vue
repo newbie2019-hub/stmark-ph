@@ -78,7 +78,7 @@
                   v-model="data.start"
                   id="start-datetime "
                 />
-                Event Start
+                Event End
                 <input
                   class="form-control"
                   type="datetime-local"

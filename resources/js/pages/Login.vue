@@ -102,13 +102,12 @@
                   />
                   <div class="invalid-feedback">Password is required</div>
                 </div>
-                <a
+                <button
                   type="button"
                   @click="login"
                   class="btn btn-info rounded-pill btn-block mt-4"
                   :disabled="isLoading"
-                  >{{ isLoading ? "Logging in..." : "Login" }}</a
-                >
+                  >{{ isLoading ? "Logging in..." : "Login" }}</button>
               </div>
             </form>
             <p class="text-center text-light pt-4" style="font-weight: 300">
@@ -211,28 +210,19 @@
                 />
               </div>
             </div>
-            <a
-              type="button"
-              @click="SignUp"
-              class="btn btn-info btn-block rounded-pill mt-4"
-            >
+            <button type="button" @click="SignUp" class="btn btn-info btn-block rounded-pill mt-4">
               {{ isLoading ? "Signing Up..." : "Sign Up" }}
-            </a>
+            </button>
             <p class="text-center text-light pt-4" style="font-weight: 300">
               Follow us on
             </p>
             <div class="row justify-content-center mt-2">
-              <a
-                href="https://www.facebook.com/SMCOT/"
-                target="_blank"
-                class="text-light mr-3"
-                ><i class="fab fa-facebook-f fa-2x"></i></a>
-              <a
-                href="https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA"
-                target="_blank"
-                class="text-light"
-                ><i class="fab fa-youtube fa-2x"></i
-              ></a>
+              <a href="https://www.facebook.com/SMCOT/" target="_blank" class="text-light mr-3">
+                <i class="fab fa-facebook-f fa-2x"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCnrQkTHL-J97r_ggZ2LyTTA" target="_blank" class="text-light">
+                <i class="fab fa-youtube fa-2x"></i>
+              </a>
             </div>
           </div>
         </div>
