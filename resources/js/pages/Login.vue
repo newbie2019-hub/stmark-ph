@@ -74,7 +74,7 @@
                     type="text"
                     v-model="data.email"
                     class="form-control text-light"
-                    placeholder="sample_email@gmail.com"
+                    placeholder="email_address@gmail.com"
                     aria-describedby="Email Address"
                     style="padding-left: 35px"
                     @keydown.enter="login"
@@ -95,7 +95,7 @@
                     v-model="data.password"
                     class="form-control text-light"
                     id="user_password"
-                    placeholder="******"
+                    placeholder="********"
                     style="padding-left: 35px"
                     @keydown.enter="login"
                     required

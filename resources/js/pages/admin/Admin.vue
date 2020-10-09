@@ -3,11 +3,7 @@
     <div class="sb-nav-fixed">
       <nav class="sb-topnav navbar navbar-expand navbar-light bg-light">
         <a class="navbar-brand" href="#">ST MARK - PH</a>
-        <button
-          class="btn btn-link btn-sm order-1 order-lg-0"
-          id="sidebarToggle"
-          href="#"
-        >
+        <button @click.prevent="toggleSidebar" class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle">
           <i class="fas fa-bars"></i>
         </button>
 
@@ -193,6 +189,10 @@ export default {
     activeMenu(i) {
       this.isActiveIndex = i;
     },
+    toggleSidebar() {
+      // Toggle the side navigation
+      $("body").toggleClass("sb-sidenav-toggled");
+    }
   },
   components: {},
 };

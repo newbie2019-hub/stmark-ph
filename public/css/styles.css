@@ -86,7 +86,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
 }
 
 abbr[title],
@@ -10284,57 +10283,4 @@ body {
   color: rgb(22, 22, 22);
   text-transform: uppercase;
  
-}
-
-/* CALENDAR */
-.fc .fc-daygrid-day.fc-day-today {
-  background-color: rgba(9, 185, 255, 0.726) !important;
-  color: white;
-}
-
-/* WEEKS HEADER */
-.fc .fc-col-header-cell-cushion {
-  text-transform: uppercase !important;
-  color: white;
-}
-
-/* MONTH TITLE */
-.fc .fc-toolbar-title {
-  text-transform: uppercase !important;
-  color: rgb(65, 65, 65) !important;
-  font-size: 1.3rem !important;
-  font-weight: 600;
-}
-
-/* DAY GRID */
-.fc .fc-daygrid-day-number {
-  font-size: 1rem !important;
-  font-weight: 600;
-  padding: 7px !important;
-}
-
-/*WEEK DAY */
-.fc th {
-  background: #343a40 !important;
-}
-
-.fc .fc-button-primary{
-  text-transform: uppercase !important;
-}
-
-.active-header{
-  font-size: 2.4rem;
-  font-weight: 600;
-}
-
-.ivu-notice{
-  z-index: 99999 !important;
-}
-
-.ivu-form-item-content{
-  margin-left: 0 !important; 
-}
-
-.ivu-form-item-label{
-  margin-left: 0 !important; 
 }
