@@ -306,7 +306,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card[data-v-4d815b83] {\r\n  border-top-left-radius: 12px !important;\r\n  border-bottom-right-radius: 12px !important;\r\n  border: none;\n}\r\n", ""]);
+exports.push([module.i, "\n.card[data-v-4d815b83] {\r\n  border-left-color: #f1a02f;\r\n  border-left-width: .4rem !important;\r\n  outline: none;\r\n  box-shadow: 0px 2px .4rem rgba(0, 0, 0, 0.123);\n}\r\n", ""]);
 
 // exports
 
@@ -433,7 +433,7 @@ var render = function() {
                   "div",
                   {
                     key: i,
-                    staticClass: "col-8 col-sm-6 col-md-5 col-lg-5 mb-1"
+                    staticClass: "col-9 col-sm-9 col-md-7 col-lg-5 mb-1"
                   },
                   [
                     _c(
@@ -447,7 +447,7 @@ var render = function() {
                           "h5",
                           {
                             staticClass:
-                              "text-dark text-uppercase mx-auto font-weight-bold"
+                              "text-dark text-uppercase font-weight-bold"
                           },
                           [
                             _vm._v(
@@ -462,11 +462,9 @@ var render = function() {
                           "p",
                           {
                             staticClass:
-                              "text-dark text-uppercase font-weight-bold mx-auto text-center"
+                              "text-dark text-uppercase font-weight-bold"
                           },
                           [
-                            _c("i", { staticClass: "fas fa-clock" }),
-                            _vm._v(" "),
                             _c("small", [
                               _vm._v(
                                 "STARTS: \n                " +
@@ -480,11 +478,9 @@ var render = function() {
                           "p",
                           {
                             staticClass:
-                              "text-dark text-uppercase font-weight-bold mx-auto text-center"
+                              "text-dark text-uppercase font-weight-bold"
                           },
                           [
-                            _c("i", { staticClass: "fas fa-clock" }),
-                            _vm._v(" "),
                             _c("small", [
                               _vm._v(
                                 "END: \n                " +
@@ -499,8 +495,7 @@ var render = function() {
                         _c(
                           "p",
                           {
-                            staticClass:
-                              "text-dark text-uppercase mx-auto text-center",
+                            staticClass: "text-dark text-uppercase",
                             staticStyle: { "font-size": "1.2rem" }
                           },
                           [
@@ -810,7 +805,7 @@ var staticRenderFns = [
         _vm._v("Phone: (+63) 912-345-6789 "),
         _c("br"),
         _vm._v(
-          "Email:\n                  abounahany@gmail.com\n                "
+          "Email:\n                  sample_email@gmail.com\n                "
         )
       ])
     ])
@@ -835,7 +830,7 @@ var staticRenderFns = [
         _vm._v("Phone: (+63) 912-345-6789 "),
         _c("br"),
         _vm._v(
-          "Email:\n                  abounahany@gmail.com\n                "
+          "Email:\n                  sample_email@gmail.com\n                "
         )
       ])
     ])

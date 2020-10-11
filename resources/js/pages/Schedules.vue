@@ -68,23 +68,23 @@
             <p class="mx-auto text-center sub-header-primary text-dark">No Schedules Added</p>
           </div>
           <!--- CARDS FOR SCHEDULE --->
-          <div class="col-8 col-sm-6 col-md-5 col-lg-5 mb-1" v-for="(sched, i) in scheduleData" :key="i">
+          <div class="col-9 col-sm-9 col-md-7 col-lg-5 mb-1" v-for="(sched, i) in scheduleData" :key="i">
             <div class="card p-3 mb-1" style="height: 100%">
-              <h5 class="text-dark text-uppercase mx-auto font-weight-bold">
+              <h5 class="text-dark text-uppercase font-weight-bold">
                 {{ sched.title }}
               </h5>
-              <p class="text-dark text-uppercase font-weight-bold mx-auto text-center">
-                <i class="fas fa-clock"></i> <small>STARTS: 
+              <p class="text-dark text-uppercase font-weight-bold">
+                  <small>STARTS: 
                   {{ sched.start | formatDate }}</small
                 >
               </p>
-              <p class="text-dark text-uppercase font-weight-bold mx-auto text-center">
-                <i class="fas fa-clock"></i> <small>END: 
+              <p class="text-dark text-uppercase font-weight-bold">
+                  <small>END: 
                   {{ sched.end | formatDate }}</small
                 >
               </p>
               <br />
-              <p class="text-dark text-uppercase mx-auto text-center" style="font-size: 1.2rem">
+              <p class="text-dark text-uppercase" style="font-size: 1.2rem">
                 {{ sched.description }}
               </p>
             </div>
@@ -138,7 +138,7 @@
                   <p>
                     Contact Information:
                     <br />Phone: (+63) 912-345-6789 <br />Email:
-                    abounahany@gmail.com
+                    sample_email@gmail.com
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@
                   <p class>
                     Contact Information:
                     <br />Phone: (+63) 912-345-6789 <br />Email:
-                    abounahany@gmail.com
+                    sample_email@gmail.com
                   </p>
                 </div>
               </div>
@@ -215,9 +215,9 @@ export default {
 
 <style scoped>
 .card {
-  border-top-left-radius: 12px !important;
-  border-bottom-right-radius: 12px !important;
-  border: none;
-  
+  border-left-color: #f1a02f;
+  border-left-width: .4rem !important;
+  outline: none;
+  box-shadow: 0px 2px .4rem rgba(0, 0, 0, 0.123);
 }
 </style>
