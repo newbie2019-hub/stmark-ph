@@ -6,6 +6,9 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div id="loading-animation">&nbsp;</div>
+    </div>
     <!--- NAVIGATION BAR --->
     @include('partials.navbar')
     <div class="hero">
@@ -214,16 +217,16 @@
 <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
 <script>
     AOS.init();
+
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    < script >
-        $('.carousel').carousel({
-            interval: 2500,
-            touch: true,
-            keyboard: true,
-            ride: true,
-        })
-
+<script>
+    $('.carousel').carousel({
+        interval: 2500,
+        touch: true,
+        keyboard: true,
+        ride: true,
+    })
 </script>
 
 </html>

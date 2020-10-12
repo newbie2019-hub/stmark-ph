@@ -5,7 +5,7 @@
         margin-bottom: 5px;
         padding: .45rem .9rem;
         display: inline-block;
-        transition: all .2s;
+        transition: all 250ms;
         position: relative;
         font-size: .9rem;
         text-transform: uppercase;
@@ -18,22 +18,19 @@
     }
 
     &--primary {
-        background-color: #2d8cf0;
+        background-color: #f1a20f;
         color: $color-grey-dark;
     }
 
     &--secondary {
         background-color: #1e82ec;
         color: $color-grey-dark;
-    }
 
-    &:hover {
-        &.button--secondary {
-            background-color: #2d98f0;
-            color: $color-white;
+        &:hover {
+            background-color: #0760c0;
         }
     }
-    
+
     &:active {
         box-shadow: 0 .2rem 1rem rgba($color-black, .2);
         background-color: #1a54f5;

@@ -6,6 +6,9 @@
 </head>
 
 <body>  
+    <div id="preloader">
+        <div id="loading-animation">&nbsp;</div>
+    </div>
     @include('partials.navbar')
     <div id="app">
         <blog :post='@json($blog)' :recent='@json($recent)'></blog>

@@ -64,8 +64,10 @@
 
         <div class="row justify-content-center mt-4 mb-2" style="max-height: 1000px; overflow-y: auto">
           <!-- EMPTY STATUS --->
-          <div class="col-sm-8 col-md-8 col-lg-10" v-if="scheduleData.length == 0">
-            <p class="mx-auto text-center sub-header-primary text-dark">No Schedules Added</p>
+          <div class="col-10 col-sm-8 col-md-8 col-lg-6" v-if="scheduleData.length == 0">
+            <div class="card p-3 mb-1">
+              <h4 class="lead mx-auto text-center"> Schedule is Empty </h4> 
+            </div>
           </div>
           <!--- CARDS FOR SCHEDULE --->
           <div class="col-9 col-sm-9 col-md-7 col-lg-5 mb-1" v-for="(sched, i) in scheduleData" :key="i">

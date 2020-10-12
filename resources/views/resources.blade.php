@@ -4,6 +4,9 @@
         @include('partials.header')
     </head>
     <body>
+      <div id="preloader">
+        <div id="loading-animation">&nbsp;</div>
+      </div>
         @include('partials.navbar')
         <section id="resources" class="resources">
             <div class="container d-flex h-100 justify-content-center align-items-center">
