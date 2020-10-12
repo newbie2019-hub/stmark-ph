@@ -12,8 +12,8 @@
       </div>
     </section>
     <section class="update-section">
-      <div class="container" style="min-height: 500px">
-          <div class="row justify-content-center  mt-5" v-if="hasContent" style="min-height: 500px">
+      <div class="container">
+          <div class="row justify-content-center  mt-5" v-if="hasContent">
             <div class="col-9 col-sm-9 col-md-10 col-lg-8">
               <h3
                 class="text-uppercase mb-3"
@@ -41,7 +41,7 @@
                   <div class="col-md-6">
                     <div class="card-body">
                       <h5 class="card-title">
-                        <a class="text-dark" v-bind:href="/blog/ + content.slug" >{{ content.title }}</a>
+                        <a class="" v-bind:href="/blog/ + content.slug" >{{ content.title }}</a>
                         <br />
                         <small class="text-muted update-date">
                           <!-- <Icon type="ios-clock-outline" /> -->
@@ -69,21 +69,21 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8 col-lg-4">
+            <div class="col-9 col-sm-8 col-md-8 col-lg-4">
                 <h3 class="text-uppercase mb-3 text-center mx-auto" data-aos="fade-up" data-aos-duration="1400">
                   <span class="header-secondary  text-secondary font-weight-bold ">POPULAR POST</span>
                 </h3>
                 <div v-for="(content, i) in popularPost" :key="i">
                   <a v-bind:href="'/blog/' + content.slug">
                     <div class="justify-content-center align-items-center mt-3">
-                      <img
+                      <!-- <img
                         width="50%"
                         v-bind:src="'/uploads/' + content.featuredImage"
                         alt
                         class="img-fluid mx-auto"
                         style="display: block"
-                      />
-                      <h6 class="text-muted mt-3 text-center mx-auto">
+                      /> -->
+                      <h6 class="mt-3">
                         {{ content.title }}
                         <br />
                         <!-- <Icon type="ios-clock-outline" /> -->

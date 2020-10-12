@@ -3,7 +3,7 @@
 (function ($) {
     
     var navbarCollapse = function () {
-        if ($("#navbar").offset().top > 100) {
+        if ($("#navbar").offset().top > 80) {
             $("#navbar").addClass("sticky");
         } else {
             $("#navbar").removeClass("sticky");

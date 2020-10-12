@@ -64,8 +64,8 @@
 
         <div class="row justify-content-center mt-4 mb-2" style="max-height: 1000px; overflow-y: auto">
           <!-- EMPTY STATUS --->
-          <div class="col-9 col-sm-8 col-md-8 col-lg-8" v-if="scheduleData.length == 0">
-            <p class="card">No Schedules Added</p>
+          <div class="col-9 col-sm-8 col-md-7 col-lg-5" v-if="scheduleData.length == 0">
+            <div class="card p-3">No schedules available</div>
           </div>
           <!--- CARDS FOR SCHEDULE --->
           <div class="col-9 col-sm-9 col-md-7 col-lg-5 mb-1" v-for="(sched, i) in scheduleData" :key="i">
@@ -212,7 +212,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .card {
   border-left-color: #f1a02f;

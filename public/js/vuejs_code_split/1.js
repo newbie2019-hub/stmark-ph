@@ -416,16 +416,15 @@ var render = function() {
             },
             [
               _vm.scheduleData.length == 0
-                ? _c("div", { staticClass: "col-sm-8 col-md-8 col-lg-10" }, [
-                    _c(
-                      "p",
-                      {
-                        staticClass:
-                          "mx-auto text-center sub-header-primary text-dark"
-                      },
-                      [_vm._v("No Schedules Added")]
-                    )
-                  ])
+                ? _c(
+                    "div",
+                    { staticClass: "col-9 col-sm-8 col-md-7 col-lg-5" },
+                    [
+                      _c("div", { staticClass: "card p-3" }, [
+                        _vm._v("No schedules available")
+                      ])
+                    ]
+                  )
                 : _vm._e(),
               _vm._v(" "),
               _vm._l(_vm.scheduleData, function(sched, i) {
